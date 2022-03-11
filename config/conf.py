@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
 
 import os
-from common.times import dt_strftime
 
 
-class ConfigManager(object):
+class ConfigManager():
+
     # 项目目录
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,7 +27,7 @@ class ConfigManager(object):
             raise FileNotFoundError("配置文件%s不存在！" % ini_file)
         return ini_file
 
-
 cm = ConfigManager()
+
 if __name__ == '__main__':
-    print(cm.BASE_DIR)
+    print(cm.log_file)

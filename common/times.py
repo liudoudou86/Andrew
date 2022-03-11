@@ -15,7 +15,7 @@ def dt_strftime():
     datetime格式化时间
     :return:
     """
-    return datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
+    return datetime.datetime.now().strftime("%Y-%m-%d-%H_%M_%S")
 
 
 def sleep(seconds=1.0):
@@ -39,4 +39,4 @@ def running_time(func):
 
 
 if __name__ == '__main__':
-    print(dt_strftime("%Y-%m-%d-%H%M%S"))
+    print(dt_strftime())
