@@ -1,8 +1,7 @@
 # -*- coding:utf-8 -*-
-# Author:lz
 
 import os
-from utils.times import dt_strftime
+from common.times import dt_strftime
 
 
 class ConfigManager(object):
@@ -10,20 +9,7 @@ class ConfigManager(object):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     # 报告文件
-    REPORT_FILE = os.path.join(BASE_DIR, 'report.html')
-
-    # 邮件信息
-    EMAIL_INFO = {
-        'username': '543972930@qq.com',  # 切换成你自己的地址
-        'password': 'vwyrahbwidozbfjf',
-        'smtp_host': 'smtp.qq.com',
-        'smtp_port': 465
-    }
-
-    # 收件人
-    ADDRESSEE = [
-        '543972930@qq.com',
-    ]
+    REPORT_FILE = os.path.join(BASE_DIR, 'Report_{time}.html')
 
     @property
     def log_file(self):
@@ -31,7 +17,7 @@ class ConfigManager(object):
         log_dir = os.path.join(self.BASE_DIR, 'logs')
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
-        return os.path.join(log_dir, '{}.log'.format(dt_strftime()))
+        return os.path.join(log_dir)
 
     @property
     def ini_file(self):

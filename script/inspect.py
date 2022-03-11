@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-# Author:lz
 
 import os
 import sys

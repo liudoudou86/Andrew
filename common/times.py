@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-# Author:lz
 
 import datetime
 import time
@@ -11,12 +10,12 @@ def timestamp():
     return time.time()
 
 
-def dt_strftime(fmt="%Y%m"):
+def dt_strftime():
     """
     datetime格式化时间
-    :param fmt "%Y%m%d %H%M%S
+    :return:
     """
-    return datetime.datetime.now().strftime(fmt)
+    return datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
 
 
 def sleep(seconds=1.0):
@@ -40,4 +39,4 @@ def running_time(func):
 
 
 if __name__ == '__main__':
-    print(dt_strftime("%Y%m%d%H%M%S"))
+    print(dt_strftime("%Y-%m-%d-%H%M%S"))

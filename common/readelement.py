@@ -1,9 +1,7 @@
 # -*- coding:utf-8 -*-
-# Author:lz
 
 import os
 import sys
-
 import yaml
 
 sys.path.append(os.path.realpath('./Andrew'))
