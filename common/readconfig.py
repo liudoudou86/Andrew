@@ -1,9 +1,11 @@
 # -*- coding:utf-8 -*-
 
 import configparser
-from config.conf import cm
+import os
+import sys
 
-HOST = 'HOST'
+sys.path.append(os.path.realpath('./Andrew'))
+from config.conf import cm
 
 
 class ReadConfig(object):
@@ -25,7 +27,7 @@ class ReadConfig(object):
 
     @property
     def url(self):
-        return self._get(HOST, HOST)
+        return self._get('Host', 'host')
 
 
 ini = ReadConfig()

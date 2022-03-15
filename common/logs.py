@@ -2,11 +2,14 @@
 
 import os
 import sys
+
 sys.path.append(os.path.realpath('./Andrew'))
 from config.conf import cm
-from common.times import dt_strftime
 from loguru import logger
-import configparser
+
+from common.readconfig import ini
+from common.times import dt_strftime
+
 
 class Log():
   
@@ -17,17 +20,15 @@ class Log():
 
     __instance = None
 
-    config = configparser.ConfigParser()
     log_path = cm.log_file
-    config.read(cm.ini_file, encoding="UTF-8")
     time = dt_strftime()
     logger.add(sink = log_path + f"/Log_{time}.log", # 日志路径
-                level = config.get('Log', 'level'), # 输出级别
-                rotation = config.get('Log', 'rotation'),  # 最大保存大小
-                retention = config.get('Log', 'retention'),  # 保存期限7天
+                level = ini._get('Log', 'level'), # 输出级别
+                rotation = ini._get('Log', 'rotation'),  # 最大保存大小
+                retention = ini._get('Log', 'retention'),  # 保存期限7天
                 encoding = "utf-8",  # 支持中文格式
                 enqueue = True,  # 支持异步存储
-                format = config.get('Log', 'format') # 输出格式
+                format = ini._get('Log', 'format') # 输出格式
     )
 
     def __new__(cls, *args, **kwargs):
