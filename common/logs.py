@@ -7,7 +7,7 @@ sys.path.append(os.path.realpath('./Andrew'))
 from config.conf import cm
 from loguru import logger
 
-from common.readconfig import ini
+from config.readconfig import ini
 from common.times import dt_strftime
 
 
