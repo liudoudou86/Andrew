@@ -11,7 +11,7 @@ import configparser
 class Log():
   
     """
-    对loguru进行二次封装
+    对loguru进行二次封装，异步打印日志
     :return:
     """
 
@@ -21,12 +21,13 @@ class Log():
     log_path = cm.log_file
     config.read(cm.ini_file, encoding="UTF-8")
     time = dt_strftime()
-    logger.add(log_path + f"/Log_{time}.log",
-                rotation=config.get('Log', 'rotation'),  # 最大保存大小
-                encoding="utf-8",  # 支持中文格式
-                enqueue=True,  # 支持异步存储
-                retention=config.get('Log', 'retention'),  # 保存期限10天
-                format="{time:YYYY-MM-DD HH:mm:ss} | {level:<8} [ {file}:{line} ] - {message}"
+    logger.add(sink = log_path + f"/Log_{time}.log", # 日志路径
+                level = config.get('Log', 'level'), # 输出级别
+                rotation = config.get('Log', 'rotation'),  # 最大保存大小
+                retention = config.get('Log', 'retention'),  # 保存期限7天
+                encoding = "utf-8",  # 支持中文格式
+                enqueue = True,  # 支持异步存储
+                format = config.get('Log', 'format') # 输出格式
     )
 
     def __new__(cls, *args, **kwargs):

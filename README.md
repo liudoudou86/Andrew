@@ -18,7 +18,7 @@ Andrew -- 父工程
 ├── common -- 通用模块
 ├── logs -- 日志模块
 ├── testcase -- 用例模块
-└── result -- 报告模块
+└── report -- 报告模块
 ```
 
 #### 技术选型
@@ -28,6 +28,7 @@ Andrew -- 父工程
 | Python               | 编程语言     
 | Requests             | 接口的http内置库
 | Pytest               | 单元测试框架
+| Loguru               | 日志框架
 
 #### 开发工具
 
