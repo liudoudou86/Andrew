@@ -3,7 +3,7 @@
 import os
 import sys
 
-sys.path.append(os.path.realpath('./Andrew'))
+sys.path.append(os.path.realpath('./Andrew/Andrew/'))
 from config.conf import cm
 from loguru import logger
 
@@ -14,11 +14,16 @@ from common.times import dt_strftime
 class Log():
   
     """
-    对loguru进行二次封装，异步打印日志
+    日志方法封装，异步打印
     :return:
     """
 
     __instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls.__instance:
+            cls.__instance = super(Log, cls).__new__(cls, *args, **kwargs)
+        return cls.__instance
 
     log_path = cm.log_file
     time = dt_strftime()
@@ -30,11 +35,6 @@ class Log():
                 enqueue = True,  # 支持异步存储
                 format = ini._get('Log', 'format') # 输出格式
     )
-
-    def __new__(cls, *args, **kwargs):
-        if not cls.__instance:
-            cls.__instance = super(Log, cls).__new__(cls, *args, **kwargs)
-        return cls.__instance
 
     def info(self, msg):
         return logger.info(msg)

@@ -38,3 +38,9 @@ Visual Studio Code - 代码编辑器
 
 * 接口自动化测试框架
 * pip install -r requirements.txt - 一次性安装所有需求的三方库
+
+### 开发进度
+
+- [x] 封装日志的方法
+- [x] 封装读取配置文件的方法
+- [ ] 封装request的方法

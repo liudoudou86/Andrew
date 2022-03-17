@@ -1,0 +1,12 @@
+请求 URL: http://10.8.8.145:8082/taslyb2bbms/v1/rebate/module/rebate/details
+请求方法: POST
+Cookie：SESSION=fa0e0f1d-7948-4f57-8cbf-4add533683c5
+请求体：
+{
+  "regionCrmCode": "340000",
+  "saleOrgSapCode": "1017",
+  "firstLevelReceivingEnterpriseSapCode": "0010000269",
+  "moduleCode": "KM02",
+  "useRebateAmount": "0",
+  "priorityUseSecondLevelEnterprises": []
+}

@@ -4,7 +4,7 @@ import configparser
 import os
 import sys
 
-sys.path.append(os.path.realpath('./Andrew'))
+sys.path.append(os.path.realpath('./Andrew/Andrew/'))
 from config.conf import cm
 
 
