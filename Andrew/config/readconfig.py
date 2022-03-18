@@ -1,11 +1,8 @@
 # -*- coding:utf-8 -*-
 
 import configparser
-import os
-import sys
 
-sys.path.append(os.path.realpath('./Andrew/Andrew/'))
-from config.conf import cm
+from Andrew.config.conf import cm
 
 
 class ReadConfig(object):

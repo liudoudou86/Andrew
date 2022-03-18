@@ -1,14 +1,9 @@
 # -*- coding:utf-8 -*-
 
-import os
-import sys
-
-sys.path.append(os.path.realpath('./Andrew/Andrew/'))
-from config.conf import cm
+from Andrew.common.time import dt_strftime
+from Andrew.config.conf import cm
+from Andrew.config.readconfig import ini
 from loguru import logger
-
-from config.readconfig import ini
-from common.times import dt_strftime
 
 
 class Log():
