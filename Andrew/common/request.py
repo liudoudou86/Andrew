@@ -2,6 +2,7 @@
 
 import requests
 from Andrew.common.log import log
+from Andrew.config.readconfig import ini
 
 
 class HttpRequest():
@@ -36,6 +37,6 @@ class HttpRequest():
 
 
 if __name__ == '__main__':
-    url = 'http://10.8.8.145:8082/taslyb2bbms/v1/rebate/queryRebateIsToSelect/B2B2022031610335949514_1017_1'
+    url = ini._get('Host', 'Host') + 'v1/rebate/queryRebateIsToSelect/B2B2022031610335949514_1017_1'
     result = HttpRequest().send_get(url)
     log.debug(result.json)
