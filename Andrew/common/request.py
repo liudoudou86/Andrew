@@ -80,12 +80,12 @@ class HttpRequest():
 
     def __init__(self):
         self.log = log
+        self.cookies = 'SESSION=68bd6e98-4d01-4177-ba3d-544a67aa2d9d' # TODO 需要后期维护为动态获取
         self.headers = {
             'Accept': 'application/json, text/plain, */*',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.9',
             'Content-Type': 'application/json;charset=UTF-8',
-            'Cookie': 'SESSION=68bd6e98-4d01-4177-ba3d-544a67aa2d9d', # TODO 需要后期维护为动态获取
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
         }
 
@@ -93,7 +93,7 @@ class HttpRequest():
     def get(self, url, params=None, **kwargs):
         if (ini._get('Host', 'Host') is not None) and ("http" not in url):
             url = ini._get('Host', 'Host') + url
-        return requests.get(url, params=params, **kwargs)
+        return requests.get(url, self.headers, params=params, **kwargs)
 
     @request
     def post(self, url, data=None, json=None, **kwargs):
@@ -128,18 +128,19 @@ class HttpRequest():
         """
         s = requests.Session()
         return s
-
+    
     @staticmethod
     def request(method=None, url=None, headers=None, files=None, data=None,
                 params=None, auth=None, cookies=None, hooks=None, json=None):
         """
-        A user-created :class:`Request <Request>` object.
+        预留用户创建的请求方法
         """
         req = requests.Request(method, url, headers, files, data,
                                params, auth, cookies, hooks, json)
         return req
+    
 
 
 if __name__ == '__main__':
-    url = 'http://10.8.8.145:8082/taslyb2bbms/v1/rebate/queryRebateIsToSelect/B2B2022031610335949514_1017_1'
-    result = HttpRequest().get(url=url)
+    url = 'v1/rebate/queryRebateIsToSelect/B2B2022031610335949514_1017_1'
+    result = HttpRequest().get(url)
