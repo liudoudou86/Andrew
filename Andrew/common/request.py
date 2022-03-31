@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+from http.cookiejar import Cookie
 import requests
 from Andrew.common.log import log
 from Andrew.config.readconfig import ini
@@ -16,12 +17,12 @@ def request(func):
     def wrapper(*args, **kwargs):
         func_name = func.__name__
         print("\n")
-        log.info('-------------- Request -----------------[🚀]')
+        log.info('------------------ Request ------------------[🚀]')
         try:
             url = list(args)[1]
         except IndexError:
             url = kwargs.get("url", "")
-        if (ini._get('Host', 'Host') is not None) and ("http" not in url):
+        if ini._get('Host', 'Host') is not None:
             url = ini._get('Host', 'Host') + list(args)[1]
 
         img_file = False
@@ -29,7 +30,8 @@ def request(func):
         if file_type in IMG:
             img_file = True
 
-        log.debug("[method]: {m}      [url]: {u} \n".format(m=func_name.upper(), u=url))
+        log.debug("[method]: {m}".format(m=func_name.upper()))
+        log.debug("[url]: {u}".format(u=url))
         auth = kwargs.get("auth", "")
         headers = kwargs.get("headers", "")
         cookies = kwargs.get("cookies", "")
@@ -53,7 +55,7 @@ def request(func):
         r = func(*args, **kwargs)
 
         ResponseResult.status_code = r.status_code
-        log.info("-------------- Response ----------------[🛬️]")
+        log.info("------------------ Response ------------------[🛬️]")
         try:
             resp = r.json()
             log.debug(f"[type]: json \n")
@@ -80,36 +82,28 @@ class HttpRequest():
 
     def __init__(self):
         self.log = log
-        self.cookies = 'SESSION=68bd6e98-4d01-4177-ba3d-544a67aa2d9d' # TODO 需要后期维护为动态获取
-        self.headers = {
-            'Accept': 'application/json, text/plain, */*',
-            'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.9',
-            'Content-Type': 'application/json;charset=UTF-8',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
-        }
 
     @request
     def get(self, url, params=None, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ("http" not in url):
+        if ini._get('Host', 'Host') is not None:
             url = ini._get('Host', 'Host') + url
         return requests.get(url, self.headers, params=params, **kwargs)
 
     @request
     def post(self, url, data=None, json=None, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ("http" not in url):
+        if ini._get('Host', 'Host') is not None:
             url = ini._get('Host', 'Host') + url
         return requests.post(url, data=data, json=json, **kwargs)
 
     @request
     def put(self, url, data=None, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ("http" not in url):
+        if ini._get('Host', 'Host') is not None:
             url = ini._get('Host', 'Host') + url
         return requests.put(url, data=data, **kwargs)
 
     @request
     def delete(self, url, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ("http" not in url):
+        if ini._get('Host', 'Host') is not None:
             url = ini._get('Host', 'Host') + url
         return requests.delete(url, **kwargs)
 
@@ -143,4 +137,12 @@ class HttpRequest():
 
 if __name__ == '__main__':
     url = 'v1/rebate/queryRebateIsToSelect/B2B2022031610335949514_1017_1'
-    result = HttpRequest().get(url)
+    header = {
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Encoding': 'gzip, deflate',
+    'Accept-Language': 'zh-CN,zh;q=0.9',
+    'Content-Type': 'application/json;charset=UTF-8',
+    'Cookie': 'SESSION=68bd6e98-4d01-4177-ba3d-544a67aa2d9d',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    }
+    result = HttpRequest().get(url,params=header)
