@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 
-from http.cookiejar import Cookie
 import requests
 from Andrew.common.log import log
 from Andrew.config.readconfig import ini
@@ -22,7 +21,7 @@ def request(func):
             url = list(args)[1]
         except IndexError:
             url = kwargs.get("url", "")
-        if ini._get('Host', 'Host') is not None:
+        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + list(args)[1]
 
         img_file = False
@@ -30,8 +29,7 @@ def request(func):
         if file_type in IMG:
             img_file = True
 
-        log.debug("[method]: {m}".format(m=func_name.upper()))
-        log.debug("[url]: {u}".format(u=url))
+        log.debug("[method]: {m}  [url]: {u}".format(m=func_name.upper(), u=url))
         auth = kwargs.get("auth", "")
         headers = kwargs.get("headers", "")
         cookies = kwargs.get("cookies", "")
@@ -39,17 +37,17 @@ def request(func):
         data = kwargs.get("data", "")
         json = kwargs.get("json", "")
         if auth != "":
-            log.debug(f"[auth]:\n {auth} \n")
+            log.debug(f"[auth]: {auth}")
         if headers != "":
-            log.debug(f"[headers]:\n {headers} \n")
+            log.debug(f"[headers]: {headers}")
         if cookies != "":
-            log.debug(f"[cookies]:\n {cookies} \n")
+            log.debug(f"[cookies]: {cookies}")
         if params != "":
-            log.debug(f"[params]:\n {params} \n")
+            log.debug(f"[params]: {params}")
         if data != "":
-            log.debug(f"[data]:\n {data} \n")
+            log.debug(f"[data]: {data}")
         if json != "":
-            log.debug(f"[json]:\n {json} \n")
+            log.debug(f"[json]: {json}")
 
         # running function
         r = func(*args, **kwargs)
@@ -58,52 +56,48 @@ def request(func):
         log.info("------------------ Response ------------------[🛬️]")
         try:
             resp = r.json()
-            log.debug(f"[type]: json \n")
-            log.debug(f"[response]:\n {resp} \n")
+            log.debug(f"[type]: json")
+            log.debug(f"[response]: \n {resp}")
             ResponseResult.response = resp
         except BaseException as msg:
-            log.debug("[warning]: {} \n".format(msg))
+            log.debug("[warning]: {}".format(msg))
             if img_file is True:
                 log.debug("[type]: {}".format(file_type))
                 ResponseResult.response = r.content
             else:
-                log.debug("[type]: text \n")
-                log.debug(f"[response]:\n {r.text} \n")
+                log.debug("[type]: text")
+                log.debug(f"[response]: \n {r.text}")
                 ResponseResult.response = r.text
 
     return wrapper
 
-class HttpRequest():
+class HttpRequest(object):
   
     """
     请求工具类封装
-    :return:
     """
-
-    def __init__(self):
-        self.log = log
 
     @request
     def get(self, url, params=None, **kwargs):
-        if ini._get('Host', 'Host') is not None:
+        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
-        return requests.get(url, self.headers, params=params, **kwargs)
+        return requests.get(url, params=params, **kwargs)
 
     @request
     def post(self, url, data=None, json=None, **kwargs):
-        if ini._get('Host', 'Host') is not None:
+        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
         return requests.post(url, data=data, json=json, **kwargs)
 
     @request
     def put(self, url, data=None, **kwargs):
-        if ini._get('Host', 'Host') is not None:
+        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
         return requests.put(url, data=data, **kwargs)
 
     @request
     def delete(self, url, **kwargs):
-        if ini._get('Host', 'Host') is not None:
+        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
         return requests.delete(url, **kwargs)
 
@@ -136,13 +130,5 @@ class HttpRequest():
 
 
 if __name__ == '__main__':
-    url = 'v1/rebate/queryRebateIsToSelect/B2B2022031610335949514_1017_1'
-    header = {
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Encoding': 'gzip, deflate',
-    'Accept-Language': 'zh-CN,zh;q=0.9',
-    'Content-Type': 'application/json;charset=UTF-8',
-    'Cookie': 'SESSION=68bd6e98-4d01-4177-ba3d-544a67aa2d9d',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
-    }
-    result = HttpRequest().get(url,params=header)
+    url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
+    result = HttpRequest().get(url)
