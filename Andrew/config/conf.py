@@ -8,8 +8,8 @@ class ConfigManager():
     # 项目目录
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    # 报告文件
-    REPORT_FILE = os.path.join(BASE_DIR, 'Report_{time}.html')
+    # 报告目录
+    report_dir = os.path.join(BASE_DIR, 'report', 'Report_{time}.html')
 
     @property
     def log_file(self):
@@ -28,6 +28,3 @@ class ConfigManager():
         return ini_file
 
 cm = ConfigManager()
-
-if __name__ == '__main__':
-    print(cm.log_file)

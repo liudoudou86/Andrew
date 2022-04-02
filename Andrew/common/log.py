@@ -44,6 +44,3 @@ class Log():
         return logger.warning(msg)
 
 log = Log()
-
-if __name__ == '__main__':
-    log.debug('where are you?')

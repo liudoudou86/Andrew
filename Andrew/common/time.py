@@ -36,7 +36,3 @@ def running_time(func):
         return res
 
     return wrapper
-
-
-if __name__ == '__main__':
-    print(dt_strftime())

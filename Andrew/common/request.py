@@ -109,5 +109,4 @@ class HttpRequest(object):
 
 if __name__ == '__main__':
     url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
-    # url = 'https://www.jianshu.com/shakespeare/v2/notes/417738fc9960/audio'
     result = HttpRequest().get(url)
