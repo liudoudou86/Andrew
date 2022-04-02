@@ -5,9 +5,6 @@ from Andrew.common.log import log
 from Andrew.config.readconfig import ini
 
 
-IMG = ["jpg", "jpeg", "gif", "bmp", "webp"]
-
-
 class ResponseResult:
     status_code = 200
     response = None
@@ -16,28 +13,22 @@ def request(func):
     def wrapper(*args, **kwargs):
         func_name = func.__name__
         print("\n")
-        log.info('------------------ Request ------------------[🚀]')
+        log.info('------------------------ Request ------------------------[🚀]')
         try:
             url = list(args)[1]
         except IndexError:
             url = kwargs.get("url", "")
+        # 读取配置文件中的url或者传入url
         if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + list(args)[1]
 
-        img_file = False
-        file_type = url.split(".")[-1]
-        if file_type in IMG:
-            img_file = True
-
-        log.debug("[method]: {m}  [url]: {u}".format(m=func_name.upper(), u=url))
-        auth = kwargs.get("auth", "")
+        log.debug("[Method]: {m}".format(m=func_name.upper()))
+        log.debug("[URL]: {u}".format(u=url))
         headers = kwargs.get("headers", "")
         cookies = kwargs.get("cookies", "")
         params = kwargs.get("params", "")
         data = kwargs.get("data", "")
         json = kwargs.get("json", "")
-        if auth != "":
-            log.debug(f"[auth]: {auth}")
         if headers != "":
             log.debug(f"[headers]: {headers}")
         if cookies != "":
@@ -53,21 +44,19 @@ def request(func):
         r = func(*args, **kwargs)
 
         ResponseResult.status_code = r.status_code
-        log.info("------------------ Response ------------------[🛬️]")
+        log.info("------------------------ Response ------------------------[🛬️]")
+        # 判断是否为json格式，排除其他格式的响应数据
         try:
             resp = r.json()
-            log.debug(f"[type]: json")
-            log.debug(f"[response]: \n {resp}")
+            log.debug(f"[Type]: json")
+            log.debug(f"[Response]: \n {resp}")
             ResponseResult.response = resp
+        # 在返回的数据中没有json格式，则认为是文本格式
         except BaseException as msg:
-            log.debug("[warning]: {}".format(msg))
-            if img_file is True:
-                log.debug("[type]: {}".format(file_type))
-                ResponseResult.response = r.content
-            else:
-                log.debug("[type]: text")
-                log.debug(f"[response]: \n {r.text}")
-                ResponseResult.response = r.text
+            log.debug("[Warning]: {}".format(msg))
+            log.debug("[Type]: text")
+            # log.debug(f"[response]: \n {r.text}")
+            # ResponseResult.response = r.text
 
     return wrapper
 
@@ -116,19 +105,9 @@ class HttpRequest(object):
         """
         s = requests.Session()
         return s
-    
-    @staticmethod
-    def request(method=None, url=None, headers=None, files=None, data=None,
-                params=None, auth=None, cookies=None, hooks=None, json=None):
-        """
-        预留用户创建的请求方法
-        """
-        req = requests.Request(method, url, headers, files, data,
-                               params, auth, cookies, hooks, json)
-        return req
-    
 
 
 if __name__ == '__main__':
     url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
+    # url = 'https://www.jianshu.com/shakespeare/v2/notes/417738fc9960/audio'
     result = HttpRequest().get(url)
