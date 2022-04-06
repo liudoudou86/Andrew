@@ -5,10 +5,6 @@ from Andrew.common.log import log
 from Andrew.config.readconfig import ini
 
 
-class ResponseResult:
-    status_code = 200
-    response = None
-
 def request(func):
     def wrapper(*args, **kwargs):
         func_name = func.__name__
@@ -43,20 +39,17 @@ def request(func):
         # running function
         r = func(*args, **kwargs)
 
-        ResponseResult.status_code = r.status_code
         log.info("------------------------ Response ------------------------[🛬️]")
         # 判断是否为json格式，排除其他格式的响应数据
         try:
             resp = r.json()
             log.debug(f"[Type]: json")
             log.debug(f"[Response]: \n {resp}")
-            ResponseResult.response = resp
         # 在返回的数据中没有json格式，则认为是文本格式
         except BaseException as msg:
             log.debug("[Warning]: {}".format(msg))
             log.debug("[Type]: text")
             # log.debug(f"[response]: \n {r.text}")
-            # ResponseResult.response = r.text
 
     return wrapper
 
@@ -96,7 +89,8 @@ class HttpRequest(object):
         返回响应结果
         :return: response
         """
-        return ResponseResult.response
+        response = None
+        return response
 
     @property
     def session(self):
