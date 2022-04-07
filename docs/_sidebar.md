@@ -1,2 +1,2 @@
 * **导航**
-  * [常用工具](/Technical.md)
+  * [快速开始](/Quick_Start.md)
