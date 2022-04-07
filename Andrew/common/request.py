@@ -36,20 +36,21 @@ def request(func):
         if json != "":
             log.debug(f"[json]: {json}")
 
-        # running function
+        # 传入可变参数以字典形式展示
         r = func(*args, **kwargs)
 
         log.info("------------------------ Response ------------------------[🛬️]")
         # 判断是否为json格式，排除其他格式的响应数据
         try:
-            resp = r.json()
+            res = r.json()
             log.debug(f"[Type]: json")
-            log.debug(f"[Response]: \n {resp}")
+            log.debug(f"[Response]: \n {res}")
         # 在返回的数据中没有json格式，则认为是文本格式
         except BaseException as msg:
+            res = r.text
             log.debug("[Warning]: {}".format(msg))
             log.debug("[Type]: text")
-            # log.debug(f"[response]: \n {r.text}")
+            log.debug(f"[response]: \n {res}")
 
     return wrapper
 
@@ -102,5 +103,12 @@ class HttpRequest(object):
 
 
 if __name__ == '__main__':
-    url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
-    result = HttpRequest().get(url)
+    # url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
+    # result = HttpRequest().get(url)
+    url = 'https://strategyppm-stg.tasly.com/EHRTF/background/login/loginCheck.do'
+    json = {
+        "userName" : "hanbo",
+        "userPassword" : "1",
+        "remember" : "true"
+    }
+    result = HttpRequest().post(url, json=json)
