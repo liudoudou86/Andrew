@@ -18,8 +18,8 @@ def request(func):
         if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + list(args)[1]
 
-        log.debug("[Method]: {m}".format(m=func_name.upper()))
-        log.debug("[URL]: {u}".format(u=url))
+        log.debug("[method]: {m}".format(m=func_name.upper()))
+        log.debug("[url]: {u}".format(u=url))
         headers = kwargs.get("headers", "")
         cookies = kwargs.get("cookies", "")
         params = kwargs.get("params", "")
@@ -43,14 +43,15 @@ def request(func):
         # 判断是否为json格式，排除其他格式的响应数据
         try:
             res = r.json()
-            log.debug(f"[Type]: json")
-            log.debug(f"[Response]: \n {res}")
+            log.debug(f"[status_code]: {r.status_code}")
+            log.debug(f"[type]: json")
+            log.debug(f"[response]: \n {res}")
         # 在返回的数据中没有json格式，则认为是文本格式
         except BaseException as msg:
-            res = r.text
-            log.debug("[Warning]: {}".format(msg))
-            log.debug("[Type]: text")
-            log.debug(f"[response]: \n {res}")
+            log.debug("[warning]: {}".format(msg))
+            log.debug(f"[status_code]: {r.status_code}")
+            log.debug("[type]: text")
+            log.debug(f"[response]: \n {r.text}")
 
     return wrapper
 
