@@ -22,11 +22,10 @@ class Assertions():
         :return:
         """
         try:
-            assert code == expected_code
+            assert_that(code, equal_to(expected_code))
             return True
         except:
-            self.log.info("statusCode error, expected_code is %s, statusCode is %s " % (expected_code, code))
-
+            self.log.error("响应码错误, 预期响应码为 %s, 实际响应码为 %s " % (expected_code, code))
             raise
 
     def assert_body(self, body, body_msg, expected_msg):
@@ -103,6 +102,5 @@ Assert = Assertions()
 if __name__ == '__main__':
     # info_body = {'code': 102001, 'message': 'login success'}
     # Assert = Assertions()
-    # expect_code = 10200
-    # Assert.assert_code(info_body['code'], expect_code)
-    pass
+    expect_code = 10200
+    Assert.assert_code(1, expect_code)

@@ -104,12 +104,12 @@ class HttpRequest(object):
 
 
 if __name__ == '__main__':
-    # url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
-    # result = HttpRequest().get(url)
-    url = 'https://strategyppm-stg.tasly.com/EHRTF/background/login/loginCheck.do'
-    json = {
-        "userName" : "hanbo",
-        "userPassword" : "1",
-        "remember" : "true"
-    }
-    result = HttpRequest().post(url, json=json)
+    url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
+    result = HttpRequest().get(url)
+    # url = 'https://strategyppm-stg.tasly.com/EHRTF/background/login/loginCheck.do'
+    # json = {
+    #     "userName" : "hanbo",
+    #     "userPassword" : "1",
+    #     "remember" : "true"
+    # }
+    # result = HttpRequest().post(url, json=json)
