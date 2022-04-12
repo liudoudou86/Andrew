@@ -1,10 +1,7 @@
 # -*- coding:utf-8 -*-
 
-import json
-
 from Andrew.common.log import log
 from hamcrest import *
-from jsonpath import *
 
 
 class Assertions():
@@ -25,82 +22,94 @@ class Assertions():
             assert_that(code, equal_to(expected_code))
             return True
         except:
-            self.log.error("响应码错误, 预期响应码为 %s, 实际响应码为 %s " % (expected_code, code))
-            raise
+            self.log.error("状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
+            # raise
 
-    def assert_body(self, body, body_msg, expected_msg):
+    def assert_string(self, body_msg, expected_msg):
         """
-        验证response body中任意属性的值
-        :param body:
+        验证response 相等字符串
         :param body_msg:
         :param expected_msg:
         :return:
         """
         try:
-            msg = body[body_msg]
-            assert msg == expected_msg
+            assert_that(body_msg, has_string(expected_msg))
             return True
 
         except:
-            self.log.info(
-                "Response body msg != expected_msg, expected_msg is %s, body_msg is %s" % (expected_msg, body_msg))
+            self.log.error("字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
+            # raise
 
-            raise
-
-    def assert_in_text(self, body, expected_msg):
+    def assert_value(self, body, expected_msg):
         """
-        验证response body中是否包含预期字符串
+        验证response 对象是否包含预期值
         :param body:
         :param expected_msg:
         :return:
         """
         try:
-            text = json.dumps(body, ensure_ascii=False)
-            # print(text)
-            assert expected_msg in text
+            assert_that(body, has_value(expected_msg))
             return True
 
         except:
-            self.log.info("Response body Does not contain expected_msg, expected_msg is %s" % expected_msg)
+            self.log.error("对象未包含预期值, 预期值为 %s" % expected_msg)
+            # raise
 
-            raise
-
-    def assert_text(self, body, expected_msg):
+    def assert_key(self, body, expected_msg):
         """
-        验证response body中是否等于预期字符串
+        验证response 对象是否包含预期属性
         :param body:
         :param expected_msg:
         :return:
         """
         try:
-            assert body == expected_msg
+            assert_that(body, has_key(expected_msg))
             return True
 
         except:
-            self.log.info("Response body != expected_msg, expected_msg is %s, body is %s" % (expected_msg, body))
+            self.log.error("对象未包含预期属性, 预期属性为 %s" % expected_msg)
+            # raise
 
-            raise
+    def assert_obj(self, body, expected_msg):
+        """
+        验证response 对象是否包含预期键值对
+        :param body:
+        :param expected_msg:
+        :return:
+        """
+        try:
+            assert_that(body, has_entries(expected_msg))
+            return True
+
+        except:
+            self.log.error("对象未包含预期键值对, 预期键值对为 %s" % expected_msg)
+            # raise
 
     def assert_time(self, time, expected_time):
         """
-        验证response body响应时间小于预期最大响应时间,单位：毫秒
+        验证response 响应时间小于预期最大响应时间, 单位：毫秒
         :param body:
         :param expected_time:
         :return:
         """
         try:
-            assert time < expected_time
+            assert_that(time, less_than_or_equal_to(expected_time))
             return True
 
         except:
-            self.log.info("Response time > expected_time, expected_time is %s, time is %s" % (expected_time, time))
+            self.log.error("响应时间大于预期结果, 预期为 %s, 实际为 %s " % (expected_time, time))
+            # raise
 
-            raise
+    # TODO: 数组部分待完善
 
 Assert = Assertions()
 
 if __name__ == '__main__':
-    # info_body = {'code': 102001, 'message': 'login success'}
-    # Assert = Assertions()
-    expect_code = 10200
-    Assert.assert_code(1, expect_code)
+    body =  {
+            "result": "success",
+            "data": [1],
+            "errorCode": "",
+            "errorMessage": "",
+            }
+    expected_msg = {"data": []}
+    Assert.assert_obj(body, expected_msg)

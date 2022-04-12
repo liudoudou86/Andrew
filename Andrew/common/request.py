@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 
+import json
+
 import requests
 from Andrew.common.log import log
 from Andrew.config.readconfig import ini
@@ -24,17 +26,17 @@ def request(func):
         cookies = kwargs.get("cookies", "")
         params = kwargs.get("params", "")
         data = kwargs.get("data", "")
-        json = kwargs.get("json", "")
+        jsons = json.dumps(kwargs.get("json", ""), indent=2, ensure_ascii=False)
         if headers != "":
-            log.debug(f"[headers]: {headers}")
+            log.debug(f"[headers]: \n {headers}")
         if cookies != "":
-            log.debug(f"[cookies]: {cookies}")
+            log.debug(f"[cookies]: \n {cookies}")
         if params != "":
-            log.debug(f"[params]: {params}")
+            log.debug(f"[params]: \n {params}")
         if data != "":
-            log.debug(f"[data]: {data}")
-        if json != "":
-            log.debug(f"[json]: {json}")
+            log.debug(f"[data]: \n {data}")
+        if jsons != "":
+            log.debug(f"[json]: \n {jsons}")
 
         # 传入可变参数以字典形式展示
         r = func(*args, **kwargs)
@@ -42,7 +44,7 @@ def request(func):
         log.info("------------------------ Response ------------------------[🛬️]")
         # 判断是否为json格式，排除其他格式的响应数据
         try:
-            res = r.json()
+            res = json.dumps(r.json(), indent=2, ensure_ascii=False)
             log.debug(f"[status_code]: {r.status_code}")
             log.debug(f"[type]: json")
             log.debug(f"[response]: \n {res}")
@@ -104,12 +106,12 @@ class HttpRequest(object):
 
 
 if __name__ == '__main__':
-    url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
-    result = HttpRequest().get(url)
-    # url = 'https://strategyppm-stg.tasly.com/EHRTF/background/login/loginCheck.do'
-    # json = {
-    #     "userName" : "hanbo",
-    #     "userPassword" : "1",
-    #     "remember" : "true"
-    # }
-    # result = HttpRequest().post(url, json=json)
+    # url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
+    # result = HttpRequest().get(url)
+    url = 'https://strategyppm-stg.tasly.com/EHRTF/background/login/loginCheck.do'
+    jsons = {
+        "userName" : "hanbo",
+        "userPassword" : "1",
+        "remember" : "true"
+    }
+    result = HttpRequest().post(url, json=jsons)
