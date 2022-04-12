@@ -1,10 +1,9 @@
 # -*- coding:utf-8 -*-
-# Author:lz
 
 import pytest
 
 
-class Testlogin:
+class Test01():
 
     @pytest.mark.run(order=1)
     def test_01_login(self):
