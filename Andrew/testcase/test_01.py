@@ -14,9 +14,9 @@ class Test01():
         url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
         Request.get(url)
         s = Request.status_code
-        # body = Request.response
-        # expected_code = {"resultMsg": "success"}
-        Assert.assert_code(s, 200)
+        body = Request.response
+        expected_code = {"resultMsg": "success"}
+        Assert.assert_obj(body, expected_code)
 
     @pytest.mark.run(order=2)
     def test_02(self):

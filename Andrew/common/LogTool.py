@@ -9,7 +9,7 @@ from loguru import logger
 class Log():
   
     """
-    日志方法封装，异步打印
+    日志工具类封装，异步打印
     :return:
     """
 

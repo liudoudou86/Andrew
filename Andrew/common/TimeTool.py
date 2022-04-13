@@ -32,7 +32,7 @@ def running_time(func):
     def wrapper(*args, **kwargs):
         start = timestamp()
         res = func(*args, **kwargs)
-        print("校验元素done！用时%.3f秒！" % (timestamp() - start))
+        print("校验元素完成! 用时%.3f秒！" % (timestamp() - start))
         return res
 
     return wrapper

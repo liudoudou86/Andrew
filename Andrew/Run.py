@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
 from threading import Thread
 
 import pytest
@@ -16,7 +15,7 @@ def main():
         args=("python3 {}".format(cm.testcase_dir, "test_01.py"),),
         daemon=False
     ).start()
-    pytest.main(["-sq", "--alluredir", cm.report_dir])
+    pytest.main()
 
 
 # 自动化测试启动器
