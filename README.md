@@ -7,7 +7,9 @@
 - [x] 读取配置文件
 - [x] request封装
 - [x] 响应断言
-- [] json提取
+- [] json提取解析
+- [] schema规约高级断言
+- [] 数据库操作
 
 #### 项目结构
 
@@ -29,7 +31,8 @@ Andrew -- 父工程
 | Loguru               | 日志框架
 | Requests             | 接口请求工具
 | JsonPath             | 响应获取
-| Hamcrest             | 断言工具
+| PyHamcrest           | 基于java语言断言工具
+| Jsonschema           | 预计schema规约断言工具
 | Pytest               | 测试框架
 | Allure               | 测试报告
 | Web服务              | Flask、FastAPI

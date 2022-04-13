@@ -3,9 +3,13 @@
 import json
 
 import requests
-from Andrew.common.log import log
-from Andrew.config.readconfig import ini
+from Andrew.Common.LogTool import log
+from Andrew.Config.ReadConfig import ini
 
+
+class ResponseResult:
+    status_code = None
+    response = None
 
 def request(func):
     def wrapper(*args, **kwargs):
@@ -48,12 +52,16 @@ def request(func):
             log.debug(f"[status_code]: {r.status_code}")
             log.debug(f"[type]: json")
             log.debug(f"[response]: \n {res}")
+            ResponseResult.status_code = r.status_code
+            ResponseResult.response = res
         # 在返回的数据中没有json格式，则认为是文本格式
         except BaseException as msg:
             log.debug("[warning]: {}".format(msg))
             log.debug(f"[status_code]: {r.status_code}")
             log.debug("[type]: text")
             log.debug(f"[response]: \n {r.text}")
+            ResponseResult.status_code = r.status_code
+            ResponseResult.response = r.text
 
     return wrapper
 
@@ -88,13 +96,20 @@ class HttpRequest(object):
         return requests.delete(url, **kwargs)
 
     @property
+    def status_code(self):
+        """
+        返回状态码
+        :return: status_code
+        """
+        return ResponseResult.status_code
+
+    @property
     def response(self):
         """
         返回响应结果
         :return: response
         """
-        response = None
-        return response
+        return ResponseResult.response
 
     @property
     def session(self):
@@ -104,14 +119,4 @@ class HttpRequest(object):
         s = requests.Session()
         return s
 
-
-if __name__ == '__main__':
-    # url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
-    # result = HttpRequest().get(url)
-    url = 'https://strategyppm-stg.tasly.com/EHRTF/background/login/loginCheck.do'
-    jsons = {
-        "userName" : "hanbo",
-        "userPassword" : "1",
-        "remember" : "true"
-    }
-    result = HttpRequest().post(url, json=jsons)
+Request = HttpRequest()

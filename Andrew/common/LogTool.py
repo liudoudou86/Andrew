@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-from Andrew.common.time import dt_strftime
-from Andrew.config.conf import cm
-from Andrew.config.readconfig import ini
+from Andrew.Common.TimeTool import dt_strftime
+from Andrew.Config.Conf import cm
+from Andrew.Config.ReadConfig import ini
 from loguru import logger
 
 
@@ -20,7 +20,7 @@ class Log():
             cls.__instance = super(Log, cls).__new__(cls, *args, **kwargs)
         return cls.__instance
 
-    log_path = cm.log_file
+    log_path = cm.log_dir
     time = dt_strftime()
     logger.add(sink = log_path + f"/Log_{time}.log", # 日志路径
                 level = ini._get('Log', 'level'), # 输出级别

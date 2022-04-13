@@ -2,7 +2,7 @@
 
 import configparser
 
-from Andrew.config.conf import cm
+from Andrew.Config.Conf import cm
 
 
 class ReadConfig(object):
