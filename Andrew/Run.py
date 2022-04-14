@@ -10,12 +10,12 @@ from Andrew.TestCase.test_01 import Test01
 
 def main():
     Thread(
-        target=Test01.test_01,
+        target=Test01,
         name="TestThread",
         args=("python3 {}".format(cm.testcase_dir, "test_01.py"),),
         daemon=False
     ).start()
-    pytest.main()
+    pytest.main(['-sv'])
 
 
 # 自动化测试启动器

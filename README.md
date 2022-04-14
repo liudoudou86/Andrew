@@ -30,7 +30,7 @@ Andrew -- 父工程
 | Visual Studio Code   | 开发工具
 | Loguru               | 日志框架
 | Requests             | 接口请求工具
-| JsonPath             | 响应获取
+| JsonPath             | 提取解析工具
 | PyHamcrest           | 基于java语言断言工具
 | Jsonschema           | 预计schema规约断言工具
 | Pytest               | 测试框架

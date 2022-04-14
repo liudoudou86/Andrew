@@ -23,7 +23,7 @@ class Assertions():
             return True
         except:
             self.log.error("状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
-            raise
+            raise AssertionError
 
     def assert_string(self, body_msg, expected_msg):
         """
@@ -38,7 +38,7 @@ class Assertions():
 
         except:
             self.log.error("字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
-            raise
+            raise AssertionError
 
     def assert_value(self, body, expected_msg):
         """
@@ -53,7 +53,7 @@ class Assertions():
 
         except:
             self.log.error("对象未包含预期值, 预期值为 %s" % expected_msg)
-            raise
+            raise AssertionError
 
     def assert_key(self, body, expected_msg):
         """
@@ -68,7 +68,7 @@ class Assertions():
 
         except:
             self.log.error("对象未包含预期属性, 预期属性为 %s" % expected_msg)
-            raise
+            raise AssertionError
 
     def assert_obj(self, body, expected_msg):
         """
@@ -83,7 +83,7 @@ class Assertions():
 
         except:
             self.log.error("对象未包含预期键值对, 预期键值对为 %s" % expected_msg)
-            raise
+            raise AssertionError
 
     def assert_time(self, time, expected_time):
         """
@@ -98,6 +98,6 @@ class Assertions():
 
         except:
             self.log.error("响应时间大于预期结果, 预期为 %s, 实际为 %s " % (expected_time, time))
-            raise
+            raise AssertionError
 
 Assert = Assertions()

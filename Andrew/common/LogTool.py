@@ -2,7 +2,7 @@
 
 from Andrew.Common.TimeTool import dt_strftime
 from Andrew.Config.Conf import cm
-from Andrew.Config.ReadConfig import ini
+from Andrew.Common.ReadConfig import ini
 from loguru import logger
 
 

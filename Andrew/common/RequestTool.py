@@ -4,7 +4,7 @@ import json
 
 import requests
 from Andrew.Common.LogTool import log
-from Andrew.Config.ReadConfig import ini
+from Andrew.Common.ReadConfig import ini
 
 
 class ResponseResult:
