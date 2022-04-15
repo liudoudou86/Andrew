@@ -10,7 +10,7 @@ from Andrew.Common.RequestTool import Request
 @allure.feature("测试项目")
 class Test01():
 
-    @allure.story("第一条用例")
+    @allure.title("第一条用例")
     @pytest.mark.run(order=1)
     def test_01(self, start):
         log.info("第一条用例")
@@ -20,7 +20,7 @@ class Test01():
         expected_code = "success"
         Assert.assert_string(body, expected_code)
 
-    @allure.story("第二条用例")
+    @allure.title("第二条用例")
     @pytest.mark.run(order=2)
     def test_02(self, start):
         log.info("第二条用例")

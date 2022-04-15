@@ -18,8 +18,8 @@ def main():
         args=("python3 {}".format(cm.testcase_dir, "test_01.py"),),
         daemon=False
     ).start()
-    pytest.main(['-sv', '--alluredir={}'.format(cm.result_dir), '--clean-alluredir'])
-    report = os.system("allure generate --clean %s -o %s" % (cm.result_dir, cm.report_dir))
+    pytest.main()
+    report = os.system("allure generate --clean %s -o %s" % (cm.result_dir, cm.allure_dir))
     if report == 0:
         log.info("生成报告成功")
         # os.system('allure open {}'.format(cm.report_dir))

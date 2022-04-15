@@ -11,8 +11,11 @@ class ConfigManager():
     # 报告目录
     report_dir = os.path.join(BASE_DIR, 'Report')
 
-    # 报告临时目录
-    result_dir = os.path.join(BASE_DIR, 'Result')
+    # 报告数据目录
+    result_dir = os.path.join(report_dir, 'Result')
+
+    # 报告Allure目录
+    allure_dir = os.path.join(report_dir, 'Allure')
 
     # 日志目录
     log_dir = os.path.join(BASE_DIR, 'Logs')
