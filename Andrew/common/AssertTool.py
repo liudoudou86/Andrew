@@ -23,7 +23,7 @@ class Assertions():
             return True
         except:
             self.log.error("状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
-            raise AssertionError
+            raise AssertionError("状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
 
     def assert_string(self, body_msg, expected_msg):
         """
@@ -38,7 +38,7 @@ class Assertions():
 
         except:
             self.log.error("字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
-            raise AssertionError
+            raise AssertionError("字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
 
     def assert_value(self, body, expected_msg):
         """
