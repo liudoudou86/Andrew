@@ -53,7 +53,7 @@ def request(func):
             log.debug(f"[type]: json")
             log.debug(f"[response]: \n {res}")
             ResponseResult.status_code = r.status_code
-            ResponseResult.response = res
+            ResponseResult.response = r.json()
         # 在返回的数据中没有json格式，则认为是文本格式
         except BaseException as msg:
             log.debug("[warning]: {}".format(msg))

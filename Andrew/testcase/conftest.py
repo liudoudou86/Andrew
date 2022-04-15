@@ -8,4 +8,5 @@ from Andrew.Common.LogTool import log
 def start():
     log.info("------------------------测试开始------------------------")
     yield
+    
     log.info("------------------------测试结束------------------------")

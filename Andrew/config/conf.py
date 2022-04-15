@@ -11,6 +11,9 @@ class ConfigManager():
     # 报告目录
     report_dir = os.path.join(BASE_DIR, 'Report')
 
+    # 报告临时目录
+    result_dir = os.path.join(BASE_DIR, 'Result')
+
     # 日志目录
     log_dir = os.path.join(BASE_DIR, 'Logs')
 
