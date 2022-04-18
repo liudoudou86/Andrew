@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-import pymysql
+import pymysql.cursors
 from Andrew.Common.ReadConfig import ini
 
 class MysqlOperate():
