@@ -6,14 +6,14 @@ from threading import Thread
 import pytest
 
 from Andrew.Config.Conf import cm
-from Andrew.TestCase.test_01 import Test01
+from Andrew.TestCase.test_select import TestSelect
 from Andrew.Common.LogTool import log
 
 
 def main():
 
     Thread(
-        target=Test01,
+        target=TestSelect,
         name="TestThread",
         args=("python3 {}".format(cm.testcase_dir, "test_01.py"),),
         daemon=False
@@ -22,7 +22,7 @@ def main():
     report = os.system("allure generate --clean %s -o %s" % (cm.result_dir, cm.allure_dir))
     if report == 0:
         log.info("生成报告成功")
-        # os.system('allure open {}'.format(cm.report_dir))
+        os.system('allure open {}'.format(cm.allure_dir))
     else:
         log.info("生成报告失败")
 

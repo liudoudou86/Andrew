@@ -8,7 +8,7 @@ from Andrew.Common.LogTool import log
 from Andrew.Common.RequestTool import Request
 
 @allure.feature("测试项目")
-class Test01():
+class TestSelect(object):
 
     @allure.title("第一条用例")
     @pytest.mark.run(order=1)

@@ -8,3 +8,4 @@ loguru==0.5.3
 configparser==5.2.0
 PyHamcrest==2.0.3
 jsonpath==0.82
+PyMySQL==1.0.2
