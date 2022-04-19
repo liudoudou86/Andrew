@@ -22,7 +22,7 @@ def main():
     report = os.system("allure generate --clean %s -o %s" % (cm.result_dir, cm.allure_dir))
     if report == 0:
         log.info("生成报告成功")
-        os.system('allure open {}'.format(cm.allure_dir))
+        # os.system('allure open {}'.format(cm.allure_dir))
     else:
         log.info("生成报告失败")
 

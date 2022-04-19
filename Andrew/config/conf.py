@@ -23,6 +23,9 @@ class ConfigManager():
     # 用例目录
     testcase_dir = os.path.join(BASE_DIR, 'TestCase')
 
+    # 测试数据
+    testdata_dir = os.path.join(BASE_DIR, 'TestData')
+
     @property
     def ini_file(self):
         """配置文件"""
