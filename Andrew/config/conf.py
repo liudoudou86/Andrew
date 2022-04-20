@@ -23,8 +23,13 @@ class ConfigManager():
     # 用例目录
     testcase_dir = os.path.join(BASE_DIR, 'TestCase')
 
-    # 测试数据
-    testdata_dir = os.path.join(BASE_DIR, 'TestData')
+    @property
+    def testdata_file(self):
+        """测试数据"""
+        testdata_file = os.path.join(self.BASE_DIR, 'TestData', 'data.yaml')
+        if not os.path.exists(testdata_file):
+            raise FileNotFoundError("测试数据%s不存在!" % testdata_file)
+        return testdata_file
 
     @property
     def ini_file(self):
