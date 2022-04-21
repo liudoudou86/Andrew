@@ -28,4 +28,4 @@ class JsonAnalysis(object):
         return jsonpath.jsonpath(data, f'$..{keyword}')
 
 
-json = JsonAnalysis()
+Json = JsonAnalysis()

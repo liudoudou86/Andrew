@@ -2,11 +2,20 @@
 
 import allure
 import pytest
-import Andrew
+from Andrew.Common.AssertTool import Assert
+from Andrew.Common.JsonPathTool import Json
+from Andrew.Common.RequestTool import Request
 from Andrew.Common.LogTool import log
 
 @allure.feature("测试项目")
-class TestSelect(Andrew):
+class TestSelect(object):
+
+    def __init__(self):
+        self.get = Request.get
+        self.post = Request.post
+        self.assert_string = Assert.assert_string
+        self.get_value = Json.get_value
+        self.get_values = Json.get_values
 
     @allure.title("第一条用例")
     @pytest.mark.run(order=1)
@@ -24,6 +33,6 @@ class TestSelect(Andrew):
         log.info("第二条用例")
         url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
         Request.get(url)
-        body = json.get_value(Request.response, "resultMsg", 0)
+        body = self.get_value(Request.response, "resultMsg", 0)
         expected_code = "fail"
         Assert.assert_string(body, expected_code)
