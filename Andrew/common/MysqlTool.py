@@ -1,23 +1,30 @@
 # -*- coding:utf-8 -*-
 
 import pymysql.cursors
-from Andrew.Common.ReadConfig import ini
 from Andrew.Common.LogTool import log
+from Andrew.Common.ReadConfig import ini
 from prettytable import from_db_cursor
+
+# 读取数据库配置参数
+host = ini._get('Mysql', 'host')
+user = ini._get('Mysql', 'user')
+port = int(ini._get('Mysql', 'port'))
+password = ini._get('Mysql', 'password')
+database = ini._get('Mysql', 'db_name')
 
 class MysqlOperate():
 
     """
-    数据库工具类封装
+    读取数据库工具类封装
     """
     def __init__(self):
 
         try:
-            self.conn = pymysql.connect(host = ini._get('Mysql', 'host'),
-                                        user = ini._get('Mysql', 'user'),
-                                        port = int(ini._get('Mysql', 'port')),
-                                        password = ini._get('Mysql', 'password'),
-                                        database = ini._get('Mysql', 'db_name'),
+            self.conn = pymysql.connect(host = host,
+                                        user = user,
+                                        port = port,
+                                        password = password,
+                                        database = database,
                                         charset ='UTF8')
             self.cursor = self.conn.cursor()
         except Exception as e:
@@ -41,7 +48,6 @@ class MysqlOperate():
             return table
         except Exception as e:
             log.error("sql语句错误: {}: {}".format(e.args[0],e.args[1]))
-            return None
 
 mysql = MysqlOperate()
 

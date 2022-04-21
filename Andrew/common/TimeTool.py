@@ -18,7 +18,7 @@ def dt_strftime():
     return datetime.datetime.now().strftime("%Y-%m-%d-%H_%M_%S")
 
 
-def sleep(seconds=1.0):
+def sleep(seconds):
     """
     睡眠时间
     """

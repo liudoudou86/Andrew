@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from Andrew.Common.LogTool import log
+from Andrew.Common.TimeTool import sleep
 from hamcrest import *
 
 
@@ -20,10 +21,11 @@ class Assertions():
         """
         try:
             assert_that(code, equal_to(expected_code))
+            self.log.info("👀 状态码等于预期结果")
             return True
         except:
-            self.log.error("状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
-            raise AssertionError("状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
+            self.log.error("❌ 状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
+            raise AssertionError("❌ 状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
 
     def assert_string(self, body_msg, expected_msg):
         """
@@ -34,11 +36,12 @@ class Assertions():
         """
         try:
             assert_that(body_msg, has_string(expected_msg))
+            self.log.info("👀 字符串等于预期结果")
             return True
 
         except:
-            self.log.error("字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
-            raise AssertionError("字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
+            self.log.error("❌ 字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
+            raise AssertionError("❌ 字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
 
     def assert_value(self, body, expected_msg):
         """

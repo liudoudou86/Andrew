@@ -8,24 +8,17 @@ from Andrew.Common.RequestTool import Request
 from Andrew.Common.LogTool import log
 
 @allure.feature("测试项目")
-class TestSelect(object):
-
-    def __init__(self):
-        self.get = Request.get
-        self.post = Request.post
-        self.assert_string = Assert.assert_string
-        self.get_value = Json.get_value
-        self.get_values = Json.get_values
+class TestSelect:
 
     @allure.title("第一条用例")
     @pytest.mark.run(order=1)
     def test_01(self, start):
         log.info("第一条用例")
         url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
-        self.get(url)
-        body = self.get_value(Request.response, "resultMsg", 0)
-        expected_code = "success"
-        self.assert_string(body, expected_code)
+        Request.get(url)
+        body = Json.get_value(Request.response, "resultMsg", 0)
+        expected_msg = "success"
+        Assert.assert_string(body, expected_msg)
 
     @allure.title("第二条用例")
     @pytest.mark.run(order=2)
@@ -33,6 +26,6 @@ class TestSelect(object):
         log.info("第二条用例")
         url = 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899'
         Request.get(url)
-        body = self.get_value(Request.response, "resultMsg", 0)
-        expected_code = "fail"
-        Assert.assert_string(body, expected_code)
+        body = Json.get_value(Request.response, "resultMsg", 0)
+        expected_msg = "aaa"
+        Assert.assert_string(body, expected_msg)
