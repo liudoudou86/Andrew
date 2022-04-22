@@ -1,0 +1,10 @@
+-
+  test : 
+    url : v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+    mothed : get
+    assert_value : success
+-
+  test : 
+    url : v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+    mothed : get
+    assert_value : hhh
