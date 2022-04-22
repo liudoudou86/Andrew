@@ -102,3 +102,5 @@ class Assertions():
         except:
             self.log.error("响应时间大于预期结果, 预期为 %s, 实际为 %s " % (expected_time, time))
             raise AssertionError("响应时间大于预期结果, 预期为 %s, 实际为 %s " % (expected_time, time))
+
+Assert = Assertions()

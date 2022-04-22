@@ -1,14 +1,4 @@
 [ {
-  "uid" : "7b83fb2cf3d5b3bf",
-  "name" : "test_request[args1]",
-  "time" : {
-    "start" : 1650613844359,
-    "stop" : 1650613844497,
-    "duration" : 138
-  },
-  "status" : "failed",
-  "severity" : "normal"
-}, {
   "uid" : "ffb72bc918824d57",
   "name" : "test_request[args0]",
   "time" : {
@@ -17,5 +7,15 @@
     "duration" : 175
   },
   "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7b83fb2cf3d5b3bf",
+  "name" : "test_request[args1]",
+  "time" : {
+    "start" : 1650613844359,
+    "stop" : 1650613844497,
+    "duration" : 138
+  },
+  "status" : "failed",
   "severity" : "normal"
 } ]

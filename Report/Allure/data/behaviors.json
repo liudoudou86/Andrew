@@ -1,0 +1,47 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "接口测试",
+    "children" : [ {
+      "name" : "读取yaml文件",
+      "children" : [ {
+        "name" : "test_request[args0]",
+        "uid" : "ffb72bc918824d57",
+        "parentUid" : "1b69798dc41909c9b7c61fddd3901871",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650613844089,
+          "stop" : 1650613844264,
+          "duration" : 175
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'success'}}" ]
+      }, {
+        "name" : "test_request[args1]",
+        "uid" : "7b83fb2cf3d5b3bf",
+        "parentUid" : "1b69798dc41909c9b7c61fddd3901871",
+        "status" : "failed",
+        "time" : {
+          "start" : 1650613844359,
+          "stop" : 1650613844497,
+          "duration" : 138
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'hhh'}}" ]
+      } ],
+      "uid" : "1b69798dc41909c9b7c61fddd3901871"
+    } ],
+    "uid" : "ce178cef23c7fa199b074d5b9b0fe0c4"
+  } ]
+}

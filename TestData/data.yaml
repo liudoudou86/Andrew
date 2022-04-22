@@ -1,10 +1,13 @@
+# 用例1
 -
-  test : 
-    url : v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
-    mothed : get
-    assert_value : success
+  data : 
+    url : http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+    method : get
+    expected_msg : success
+
+# 用例2
 -
-  test : 
-    url : v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
-    mothed : get
-    assert_value : hhh
+  data : 
+    url : http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+    method : get
+    expected_msg : hhh

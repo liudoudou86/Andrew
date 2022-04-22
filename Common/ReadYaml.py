@@ -19,4 +19,4 @@ class Yaml(object):
                 data = yaml.load(stream=f, Loader=yaml.FullLoader)
             return data
         except FileExistsError as e:
-            log.error("文件不存在: {}".format(e)) 
+            log.error("文件不存在: {}".format(e))

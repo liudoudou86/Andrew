@@ -1,0 +1,51 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "TestCase",
+    "children" : [ {
+      "name" : "test_select",
+      "children" : [ {
+        "name" : "TestSelect",
+        "children" : [ {
+          "name" : "test_request[args0]",
+          "uid" : "ffb72bc918824d57",
+          "parentUid" : "506a1d2cd12f54a246a9703c28ba9994",
+          "status" : "passed",
+          "time" : {
+            "start" : 1650613844089,
+            "stop" : 1650613844264,
+            "duration" : 175
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'success'}}" ]
+        }, {
+          "name" : "test_request[args1]",
+          "uid" : "7b83fb2cf3d5b3bf",
+          "parentUid" : "506a1d2cd12f54a246a9703c28ba9994",
+          "status" : "failed",
+          "time" : {
+            "start" : 1650613844359,
+            "stop" : 1650613844497,
+            "duration" : 138
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'hhh'}}" ]
+        } ],
+        "uid" : "506a1d2cd12f54a246a9703c28ba9994"
+      } ],
+      "uid" : "97de6cf6c8b7854b1c5b2e86362c6b01"
+    } ],
+    "uid" : "ee79ae265a842e48c4df30f006daaf4e"
+  } ]
+}

@@ -1,0 +1,47 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-2MLCHMP",
+    "children" : [ {
+      "name" : "11680-MainThread",
+      "children" : [ {
+        "name" : "test_request[args0]",
+        "uid" : "ffb72bc918824d57",
+        "parentUid" : "92260dce90fe6301db424771bf656404",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650613844089,
+          "stop" : 1650613844264,
+          "duration" : 175
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'success'}}" ]
+      }, {
+        "name" : "test_request[args1]",
+        "uid" : "7b83fb2cf3d5b3bf",
+        "parentUid" : "92260dce90fe6301db424771bf656404",
+        "status" : "failed",
+        "time" : {
+          "start" : 1650613844359,
+          "stop" : 1650613844497,
+          "duration" : 138
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'hhh'}}" ]
+      } ],
+      "uid" : "92260dce90fe6301db424771bf656404"
+    } ],
+    "uid" : "9c2ef58eb6908287e5e70091c1258bba"
+  } ]
+}

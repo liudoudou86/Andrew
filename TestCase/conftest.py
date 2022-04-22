@@ -6,6 +6,8 @@ from Common.LogUtil import log
 
 @pytest.fixture(scope="function")
 def start():
-    log.info("------------------------测试开始------------------------")
+    print("\n")
+    log.info('------------------------ Test Start ------------------------')
     yield
-    log.info("------------------------测试结束------------------------")
+    print("\n")
+    log.info('------------------------ Test End ------------------------')

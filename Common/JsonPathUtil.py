@@ -18,7 +18,7 @@ class JsonAnalysis(object):
         """
         return jsonpath.jsonpath(data, f'$..{keyword}')[number]
 
-    def get_values(self, data, keyword):
+    def get_key(self, data, keyword):
         """
         提取json中的关键字对应的一组值
         :param data: 传入的json数据
@@ -26,3 +26,5 @@ class JsonAnalysis(object):
         :return:
         """
         return jsonpath.jsonpath(data, f'$..{keyword}')
+
+Json = JsonAnalysis()

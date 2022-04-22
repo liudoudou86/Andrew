@@ -1,0 +1,30 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: ❌ 字符串不等于预期结果, 预期为 hhh, 实际为 success",
+      "children" : [ {
+        "name" : "test_request[args1]",
+        "uid" : "7b83fb2cf3d5b3bf",
+        "parentUid" : "44d1ed9dbabc6fabfebfb2eb835c6e05",
+        "status" : "failed",
+        "time" : {
+          "start" : 1650613844359,
+          "stop" : 1650613844497,
+          "duration" : 138
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'hhh'}}" ]
+      } ],
+      "uid" : "44d1ed9dbabc6fabfebfb2eb835c6e05"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

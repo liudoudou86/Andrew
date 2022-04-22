@@ -1,8 +1,7 @@
 # -*- coding:utf-8 -*-
 
-import json
-
 import requests
+
 from Common.LogUtil import log
 from Common.ReadConfig import ini
 
@@ -11,7 +10,7 @@ class ResponseResult:
     status_code = None
     response = None
 
-def request(func):
+def request_log(func):
     def wrapper(*args, **kwargs):
         func_name = func.__name__
         print("\n")
@@ -21,8 +20,8 @@ def request(func):
         except IndexError:
             url = kwargs.get("url", "")
         # 读取配置文件中的url或者传入url
-        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'Host') + list(args)[1]
+        if (ini._get('Host', 'host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'host') + list(args)[1]
 
         log.debug("[method]: {m}".format(m=func_name.upper()))
         log.debug("[url]: {u}".format(u=url))
@@ -30,7 +29,7 @@ def request(func):
         cookies = kwargs.get("cookies", "")
         params = kwargs.get("params", "")
         data = kwargs.get("data", "")
-        jsons = json.dumps(kwargs.get("json", ""), indent=2, ensure_ascii=False)
+        json = kwargs.get("json", "")
         if headers != "":
             log.debug(f"[headers]: \n {headers}")
         if cookies != "":
@@ -39,8 +38,8 @@ def request(func):
             log.debug(f"[params]: \n {params}")
         if data != "":
             log.debug(f"[data]: \n {data}")
-        if jsons != "":
-            log.debug(f"[json]: \n {jsons}")
+        if json != "":
+            log.debug(f"[json]: \n {json}")
 
         # 传入可变参数以字典形式展示
         r = func(*args, **kwargs)
@@ -48,7 +47,7 @@ def request(func):
         log.info("------------------------ Response ------------------------[🛬️]")
         # 判断是否为json格式，排除其他格式的响应数据
         try:
-            res = json.dumps(r.json(), indent=2, ensure_ascii=False)
+            res = r.json()
             log.debug(f"[status_code]: {r.status_code}")
             log.debug(f"[type]: json")
             log.debug(f"[response]: \n {res}")
@@ -71,25 +70,25 @@ class HttpRequest(object):
     请求工具类封装
     """
 
-    @request
+    @request_log
     def get(self, url, params=None, **kwargs):
         if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
         return requests.get(url, params=params, **kwargs)
 
-    @request
+    @request_log
     def post(self, url, data=None, json=None, **kwargs):
         if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
         return requests.post(url, data=data, json=json, **kwargs)
 
-    @request
+    @request_log
     def put(self, url, data=None, **kwargs):
         if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
         return requests.put(url, data=data, **kwargs)
 
-    @request
+    @request_log
     def delete(self, url, **kwargs):
         if (ini._get('Host', 'Host') is not None) and ('http' not in url):
             url = ini._get('Host', 'Host') + url
@@ -125,6 +124,10 @@ class HttpRequest(object):
         """
         预留自动化调用方法
         """
+        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'Host') + url
         req = requests.Request(method, url, headers, files, data,
                                params, auth, cookies, hooks, json)
         return req
+
+Request = HttpRequest()
