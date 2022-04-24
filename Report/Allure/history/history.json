@@ -9,13 +9,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "1c102e84699b0481",
+      "uid" : "30dd73c0ad7e2e6d",
       "status" : "failed",
       "statusDetails" : "AssertionError: ❌ 字符串不等于预期结果, 预期为 string, 实际为 success",
       "time" : {
-        "start" : 1650792080794,
-        "stop" : 1650792082270,
-        "duration" : 1476
+        "start" : 1650792697502,
+        "stop" : 1650792698899,
+        "duration" : 1397
       }
     } ]
   },
@@ -29,12 +29,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "ab5d1d262e794c81",
+      "uid" : "52a675a6a68fed57",
       "status" : "passed",
       "time" : {
-        "start" : 1650792078814,
-        "stop" : 1650792080726,
-        "duration" : 1912
+        "start" : 1650792695538,
+        "stop" : 1650792697431,
+        "duration" : 1893
       }
     } ]
   }

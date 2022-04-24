@@ -9,13 +9,13 @@
         "name" : "TestRequest",
         "children" : [ {
           "name" : "test_string[args0]",
-          "uid" : "ab5d1d262e794c81",
+          "uid" : "52a675a6a68fed57",
           "parentUid" : "a5a44464e2c2599b43c8499d78388859",
           "status" : "passed",
           "time" : {
-            "start" : 1650792078814,
-            "stop" : 1650792080726,
-            "duration" : 1912
+            "start" : 1650792695538,
+            "stop" : 1650792697431,
+            "duration" : 1893
           },
           "flaky" : false,
           "newFailed" : false,
@@ -26,13 +26,13 @@
           "parameters" : [ "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
         }, {
           "name" : "test_string[args1]",
-          "uid" : "1c102e84699b0481",
+          "uid" : "30dd73c0ad7e2e6d",
           "parentUid" : "a5a44464e2c2599b43c8499d78388859",
           "status" : "failed",
           "time" : {
-            "start" : 1650792080794,
-            "stop" : 1650792082270,
-            "duration" : 1476
+            "start" : 1650792697502,
+            "stop" : 1650792698899,
+            "duration" : 1397
           },
           "flaky" : false,
           "newFailed" : false,

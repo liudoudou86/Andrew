@@ -1,0 +1,23 @@
+2022-04-24 17:31:35 | WARNING  [ LogUtil.py:44 ] - ------------------------ Test Start ------------------------
+2022-04-24 17:31:35 | INFO     [ LogUtil.py:35 ] - ------------------------ Request ------------------------[🚀]
+2022-04-24 17:31:35 | DEBUG    [ LogUtil.py:38 ] - [method]: REQUEST
+2022-04-24 17:31:35 | DEBUG    [ LogUtil.py:38 ] - [url]: http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+2022-04-24 17:31:36 | INFO     [ LogUtil.py:35 ] - ------------------------ Response ------------------------[🛬️]
+2022-04-24 17:31:36 | DEBUG    [ LogUtil.py:38 ] - [status_code]: 200
+2022-04-24 17:31:36 | DEBUG    [ LogUtil.py:38 ] - [type]: json
+2022-04-24 17:31:36 | DEBUG    [ LogUtil.py:38 ] - [response]: 
+ {'resultCode': '0', 'resultMsg': 'success', 'data': {'enterpriseAvailableRebateAmount': 3.0, 'saleOrgAvailableRebateAmount': None, 'regionAvailableRebateAmount': None, 'regionLimitRebateAmount': 0.0, 'modularRebateInfoList': [{'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': '商务', 'moduleCode': 'KM01', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}, {'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': '医疗', 'moduleCode': 'KM02', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}, {'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': 'OTC', 'moduleCode': 'KM03', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}, {'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': '商销', 'moduleCode': 'KM04', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}], 'amountAvailable': 0}}
+2022-04-24 17:31:36 | INFO     [ LogUtil.py:35 ] - 👀 字符串等于预期结果
+2022-04-24 17:31:37 | WARNING  [ LogUtil.py:44 ] - ------------------------ Test End ------------------------
+2022-04-24 17:31:37 | WARNING  [ LogUtil.py:44 ] - ------------------------ Test Start ------------------------
+2022-04-24 17:31:37 | INFO     [ LogUtil.py:35 ] - ------------------------ Request ------------------------[🚀]
+2022-04-24 17:31:37 | DEBUG    [ LogUtil.py:38 ] - [method]: REQUEST
+2022-04-24 17:31:37 | DEBUG    [ LogUtil.py:38 ] - [url]: http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+2022-04-24 17:31:38 | INFO     [ LogUtil.py:35 ] - ------------------------ Response ------------------------[🛬️]
+2022-04-24 17:31:38 | DEBUG    [ LogUtil.py:38 ] - [status_code]: 200
+2022-04-24 17:31:38 | DEBUG    [ LogUtil.py:38 ] - [type]: json
+2022-04-24 17:31:38 | DEBUG    [ LogUtil.py:38 ] - [response]: 
+ {'resultCode': '0', 'resultMsg': 'success', 'data': {'enterpriseAvailableRebateAmount': 3.0, 'saleOrgAvailableRebateAmount': None, 'regionAvailableRebateAmount': None, 'regionLimitRebateAmount': 0.0, 'modularRebateInfoList': [{'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': '商务', 'moduleCode': 'KM01', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}, {'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': '医疗', 'moduleCode': 'KM02', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}, {'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': 'OTC', 'moduleCode': 'KM03', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}, {'resultCode': '0', 'resultMsg': 'success', 'data': None, 'result': None, 'moduleName': '商销', 'moduleCode': 'KM04', 'availableRebateAmount': 0, 'rebateAmountWithoutPast180Days': 0, 'rebateAmountWithInPast180Days': 0}], 'amountAvailable': 0}}
+2022-04-24 17:31:38 | ERROR    [ LogUtil.py:41 ] - ❌ 字符串不等于预期结果, 预期为 string, 实际为 success 
+2022-04-24 17:31:39 | WARNING  [ LogUtil.py:44 ] - ------------------------ Test End ------------------------
+2022-04-24 17:31:44 | INFO     [ LogUtil.py:35 ] - 生成报告成功

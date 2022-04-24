@@ -4,7 +4,7 @@ import allure
 import pytest
 from Common.AssertUtil import Assert
 from Common.JsonPathUtil import Json
-from Common.ReadTestData import Yaml
+from Common.ReadYaml import Yaml
 from Common.RequestUtil import Requests
 from Common.TimeUtil import sleep
 

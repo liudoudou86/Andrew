@@ -4,16 +4,16 @@
   "children" : [ {
     "name" : "DESKTOP-2MLCHMP",
     "children" : [ {
-      "name" : "5676-MainThread",
+      "name" : "11728-MainThread",
       "children" : [ {
         "name" : "test_string[args0]",
-        "uid" : "ab5d1d262e794c81",
-        "parentUid" : "dbab52b9fd1542df56f479dccc4cdb4b",
+        "uid" : "52a675a6a68fed57",
+        "parentUid" : "9a1b1d1f8d617f75d0a8308c19347572",
         "status" : "passed",
         "time" : {
-          "start" : 1650792078814,
-          "stop" : 1650792080726,
-          "duration" : 1912
+          "start" : 1650792695538,
+          "stop" : 1650792697431,
+          "duration" : 1893
         },
         "flaky" : false,
         "newFailed" : false,
@@ -24,13 +24,13 @@
         "parameters" : [ "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
       }, {
         "name" : "test_string[args1]",
-        "uid" : "1c102e84699b0481",
-        "parentUid" : "dbab52b9fd1542df56f479dccc4cdb4b",
+        "uid" : "30dd73c0ad7e2e6d",
+        "parentUid" : "9a1b1d1f8d617f75d0a8308c19347572",
         "status" : "failed",
         "time" : {
-          "start" : 1650792080794,
-          "stop" : 1650792082270,
-          "duration" : 1476
+          "start" : 1650792697502,
+          "stop" : 1650792698899,
+          "duration" : 1397
         },
         "flaky" : false,
         "newFailed" : false,
@@ -40,7 +40,7 @@
         "retriesStatusChange" : false,
         "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 300, 'expected_msg': 'string'}}" ]
       } ],
-      "uid" : "dbab52b9fd1542df56f479dccc4cdb4b"
+      "uid" : "9a1b1d1f8d617f75d0a8308c19347572"
     } ],
     "uid" : "9c2ef58eb6908287e5e70091c1258bba"
   } ]

@@ -1,12 +1,12 @@
 {
-  "uid" : "ab5d1d262e794c81",
+  "uid" : "52a675a6a68fed57",
   "name" : "test_string[args0]",
   "fullName" : "TestCase.test_request.TestRequest#test_string",
   "historyId" : "b33a168f53055d34628500d3c16d8937",
   "time" : {
-    "start" : 1650792078814,
-    "stop" : 1650792080726,
-    "duration" : 1912
+    "start" : 1650792695538,
+    "stop" : 1650792697431,
+    "duration" : 1893
   },
   "status" : "passed",
   "flaky" : false,
@@ -18,41 +18,41 @@
   "beforeStages" : [ {
     "name" : "start",
     "time" : {
-      "start" : 1650792078805,
-      "stop" : 1650792078812,
-      "duration" : 7
+      "start" : 1650792695530,
+      "stop" : 1650792695534,
+      "duration" : 4
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 0,
-    "hasContent" : false,
+    "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "stepsCount" : 0,
+    "hasContent" : false
   } ],
   "afterStages" : [ {
     "name" : "start::0",
     "time" : {
-      "start" : 1650792080726,
-      "stop" : 1650792080745,
+      "start" : 1650792697431,
+      "stop" : 1650792697450,
       "duration" : 19
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 0,
-    "hasContent" : false,
+    "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "stepsCount" : 0,
+    "hasContent" : false
   } ],
   "labels" : [ {
-    "name" : "feature",
-    "value" : "接口测试"
-  }, {
     "name" : "story",
     "value" : "断言字符串"
+  }, {
+    "name" : "feature",
+    "value" : "接口测试"
   }, {
     "name" : "parentSuite",
     "value" : "TestCase"
@@ -67,7 +67,7 @@
     "value" : "DESKTOP-2MLCHMP"
   }, {
     "name" : "thread",
-    "value" : "5676-MainThread"
+    "value" : "11728-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -94,6 +94,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "ab5d1d262e794c81.json",
+  "source" : "52a675a6a68fed57.json",
   "parameterValues" : [ "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
 }
