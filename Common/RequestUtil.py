@@ -21,7 +21,7 @@ def request_log(func):
             url = kwargs.get("url", "")
         # 读取配置文件中的url或者传入url
         if (ini._get('Host', 'host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'host') + list(args)[1]
+            url = ini._get('Host', 'host') + url
 
         log.debug("[method]: {m}".format(m=func_name.upper()))
         log.debug("[url]: {u}".format(u=url))
@@ -72,26 +72,26 @@ class HttpRequest(object):
 
     @request_log
     def get(self, url, params=None, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'Host') + url
+        if (ini._get('Host', 'host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'host') + url
         return requests.get(url, params=params, **kwargs)
 
     @request_log
     def post(self, url, data=None, json=None, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'Host') + url
+        if (ini._get('Host', 'host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'host') + url
         return requests.post(url, data=data, json=json, **kwargs)
 
     @request_log
     def put(self, url, data=None, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'Host') + url
+        if (ini._get('Host', 'host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'host') + url
         return requests.put(url, data=data, **kwargs)
 
     @request_log
     def delete(self, url, **kwargs):
-        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'Host') + url
+        if (ini._get('Host', 'host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'host') + url
         return requests.delete(url, **kwargs)
 
     @property
@@ -118,16 +118,13 @@ class HttpRequest(object):
         s = requests.Session()
         return s
     
-    @staticmethod
-    def request(method=None, url=None, headers=None, files=None, data=None,
-                params=None, auth=None, cookies=None, hooks=None, json=None):
+    @request_log
+    def request(self, method, url, **kwargs):
         """
         预留自动化调用方法
         """
-        if (ini._get('Host', 'Host') is not None) and ('http' not in url):
-            url = ini._get('Host', 'Host') + url
-        req = requests.Request(method, url, headers, files, data,
-                               params, auth, cookies, hooks, json)
-        return req
+        if (ini._get('Host', 'host') is not None) and ('http' not in url):
+            url = ini._get('Host', 'host') + url
+        return requests.request(method, url, **kwargs)
 
-Request = HttpRequest()
+Requests = HttpRequest()

@@ -1,24 +1,5 @@
 {
-  "ce09bf2526565e877ff8feb6b2fdbd78" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "ffb72bc918824d57",
-      "status" : "passed",
-      "time" : {
-        "start" : 1650613844089,
-        "stop" : 1650613844264,
-        "duration" : 175
-      }
-    } ]
-  },
-  "03fd3b4911d821aa173e52896e84a7bc" : {
+  "079f57a256d4325eda80f05137a60628" : {
     "statistic" : {
       "failed" : 1,
       "broken" : 0,
@@ -28,13 +9,32 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "7b83fb2cf3d5b3bf",
+      "uid" : "1c102e84699b0481",
       "status" : "failed",
-      "statusDetails" : "AssertionError: ❌ 字符串不等于预期结果, 预期为 hhh, 实际为 success",
+      "statusDetails" : "AssertionError: ❌ 字符串不等于预期结果, 预期为 string, 实际为 success",
       "time" : {
-        "start" : 1650613844359,
-        "stop" : 1650613844497,
-        "duration" : 138
+        "start" : 1650792080794,
+        "stop" : 1650792082270,
+        "duration" : 1476
+      }
+    } ]
+  },
+  "b33a168f53055d34628500d3c16d8937" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ab5d1d262e794c81",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650792078814,
+        "stop" : 1650792080726,
+        "duration" : 1912
       }
     } ]
   }

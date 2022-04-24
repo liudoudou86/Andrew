@@ -4,16 +4,16 @@
   "children" : [ {
     "name" : "接口测试",
     "children" : [ {
-      "name" : "读取yaml文件",
+      "name" : "断言字符串",
       "children" : [ {
-        "name" : "test_request[args0]",
-        "uid" : "ffb72bc918824d57",
-        "parentUid" : "1b69798dc41909c9b7c61fddd3901871",
+        "name" : "test_string[args0]",
+        "uid" : "ab5d1d262e794c81",
+        "parentUid" : "87732124a04db825df4d42274072aefb",
         "status" : "passed",
         "time" : {
-          "start" : 1650613844089,
-          "stop" : 1650613844264,
-          "duration" : 175
+          "start" : 1650792078814,
+          "stop" : 1650792080726,
+          "duration" : 1912
         },
         "flaky" : false,
         "newFailed" : false,
@@ -21,16 +21,16 @@
         "newBroken" : false,
         "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'success'}}" ]
+        "parameters" : [ "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
       }, {
-        "name" : "test_request[args1]",
-        "uid" : "7b83fb2cf3d5b3bf",
-        "parentUid" : "1b69798dc41909c9b7c61fddd3901871",
+        "name" : "test_string[args1]",
+        "uid" : "1c102e84699b0481",
+        "parentUid" : "87732124a04db825df4d42274072aefb",
         "status" : "failed",
         "time" : {
-          "start" : 1650613844359,
-          "stop" : 1650613844497,
-          "duration" : 138
+          "start" : 1650792080794,
+          "stop" : 1650792082270,
+          "duration" : 1476
         },
         "flaky" : false,
         "newFailed" : false,
@@ -38,9 +38,9 @@
         "newBroken" : false,
         "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_msg': 'hhh'}}" ]
+        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 300, 'expected_msg': 'string'}}" ]
       } ],
-      "uid" : "1b69798dc41909c9b7c61fddd3901871"
+      "uid" : "87732124a04db825df4d42274072aefb"
     } ],
     "uid" : "ce178cef23c7fa199b074d5b9b0fe0c4"
   } ]

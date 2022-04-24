@@ -12,7 +12,7 @@ class Assertions():
     def __init__(self):
         self.log = log
 
-    def assert_code(self, code, expected_code):
+    def assert_code(self, code:int, expected_code):
         """
         验证response状态码
         :param code:
