@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+from http.cookiejar import Cookie
 import requests
 
 from Common.LogUtil import log
@@ -119,12 +120,12 @@ class HttpRequest(object):
         return s
     
     @request_log
-    def request(self, method, url, **kwargs):
+    def request(self, method, url, json=None, **kwargs):
         """
         预留自动化调用方法
         """
         if (ini._get('Host', 'host') is not None) and ('http' not in url):
             url = ini._get('Host', 'host') + url
-        return requests.request(method, url, **kwargs)
+        return requests.request(method, url, json=json, **kwargs)
 
 Requestor = HttpRequest()

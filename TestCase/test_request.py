@@ -19,9 +19,13 @@ class TestRequest:
         name = args["case"]["name"]
         url = args["case"]["url"]
         method = args["case"]["method"]
+        headers = args["case"]["headers"]
+        json = args["case"]["json"]
+        string = args["case"]["string"]
+        number = args["case"]["number"]
         expected_msg = args["case"]["expected_msg"]
         log.info(name)
-        Requestor.request(method=method, url=url)
-        body = Parsing.get_value(Requestor.response, "resultMsg", 0)
-        Assert.assert_string(body, expected_msg)
+        Requestor.request(method=method, url=url, headers=headers, json=json)
+        body = Parsing.get_value(Requestor.response, string, number)
+        Assert.assert_is_string(body, expected_msg)
         sleep(0.1)

@@ -27,7 +27,7 @@ class Assertions():
             self.log.error("❌ 状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
             raise AssertionError("❌ 状态码错误, 预期为 %s, 实际为 %s " % (expected_code, code))
 
-    def assert_string(self, body_msg, expected_msg):
+    def assert_is_string(self, body_msg, expected_msg):
         """
         验证response 相等字符串
         :param body_msg:
@@ -43,6 +43,22 @@ class Assertions():
             self.log.error("❌ 字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
             raise AssertionError("❌ 字符串不等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
 
+    def assert_isnot_string(self, body_msg, expected_msg):
+        """
+        验证response 不包含字符串
+        :param body_msg:
+        :param expected_msg:
+        :return:
+        """
+        try:
+            assert_that(body_msg, is_not(has_string(expected_msg)))
+            self.log.info("👀 字符串不等于预期结果")
+            return True
+
+        except:
+            self.log.error("❌ 字符串等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
+            raise AssertionError("❌ 字符串等于预期结果, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
+    
     def assert_value(self, body, expected_msg):
         """
         验证response 对象是否包含预期值
