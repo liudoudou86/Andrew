@@ -18,7 +18,7 @@ class ConfigManager():
     allure_dir = os.path.join(report_dir, 'Allure')
 
     # 日志目录
-    log_dir = os.path.join(BASE_DIR, 'Logs')
+    log_dir = os.path.join(BASE_DIR, 'Log')
 
     # 用例目录
     testcase_dir = os.path.join(BASE_DIR, 'TestCase')

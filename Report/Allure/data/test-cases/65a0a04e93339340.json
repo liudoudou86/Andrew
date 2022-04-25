@@ -1,12 +1,12 @@
 {
-  "uid" : "52a675a6a68fed57",
+  "uid" : "65a0a04e93339340",
   "name" : "test_string[args0]",
   "fullName" : "TestCase.test_request.TestRequest#test_string",
   "historyId" : "b33a168f53055d34628500d3c16d8937",
   "time" : {
-    "start" : 1650792695538,
-    "stop" : 1650792697431,
-    "duration" : 1893
+    "start" : 1650860829475,
+    "stop" : 1650860831201,
+    "duration" : 1726
   },
   "status" : "passed",
   "flaky" : false,
@@ -18,32 +18,32 @@
   "beforeStages" : [ {
     "name" : "start",
     "time" : {
-      "start" : 1650792695530,
-      "stop" : 1650792695534,
-      "duration" : 4
+      "start" : 1650860829460,
+      "stop" : 1650860829466,
+      "duration" : 6
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
     "stepsCount" : 0,
     "hasContent" : false
   } ],
   "afterStages" : [ {
     "name" : "start::0",
     "time" : {
-      "start" : 1650792697431,
-      "stop" : 1650792697450,
-      "duration" : 19
+      "start" : 1650860831203,
+      "stop" : 1650860831221,
+      "duration" : 18
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
     "stepsCount" : 0,
     "hasContent" : false
   } ],
@@ -67,7 +67,7 @@
     "value" : "DESKTOP-2MLCHMP"
   }, {
     "name" : "thread",
-    "value" : "11728-MainThread"
+    "value" : "8-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -83,7 +83,7 @@
   } ],
   "parameters" : [ {
     "name" : "args",
-    "value" : "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}"
+    "value" : "{'case': {'name': 'testcase_01', 'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}"
   } ],
   "links" : [ ],
   "hidden" : false,
@@ -94,6 +94,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "52a675a6a68fed57.json",
-  "parameterValues" : [ "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
+  "source" : "65a0a04e93339340.json",
+  "parameterValues" : [ "{'case': {'name': 'testcase_01', 'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
 }

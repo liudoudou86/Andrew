@@ -16,7 +16,7 @@ def main():
         log.info("生成报告成功")
         # os.system('allure open {}'.format(cm.allure_dir))
     else:
-        log.info("生成报告失败")
+        log.error("生成报告失败")
 
 # 自动化测试启动器
 if __name__ == '__main__':

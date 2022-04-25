@@ -14,6 +14,8 @@
   - [x] 读取ymal文件
   - [x] pytset结合yaml做数据驱动
   - [x] 第二次联调完成
+  - [x] 读取json文件
+  - [x] 扩展在线postman简版
   - [ ] 脚手架
   - [ ] dockerfile脚本
   - [ ] jenkins脚本

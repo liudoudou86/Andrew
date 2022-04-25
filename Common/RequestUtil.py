@@ -127,4 +127,4 @@ class HttpRequest(object):
             url = ini._get('Host', 'host') + url
         return requests.request(method, url, **kwargs)
 
-Requests = HttpRequest()
+Requestor = HttpRequest()

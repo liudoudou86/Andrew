@@ -7,13 +7,13 @@
       "name" : "AssertionError: ❌ 字符串不等于预期结果, 预期为 string, 实际为 success",
       "children" : [ {
         "name" : "test_string[args1]",
-        "uid" : "30dd73c0ad7e2e6d",
+        "uid" : "ba4ea995820bf829",
         "parentUid" : "fee5a8b2841ecc0102066dd0f228dc1f",
         "status" : "failed",
         "time" : {
-          "start" : 1650792697502,
-          "stop" : 1650792698899,
-          "duration" : 1397
+          "start" : 1650860831257,
+          "stop" : 1650860832719,
+          "duration" : 1462
         },
         "flaky" : false,
         "newFailed" : false,
@@ -21,7 +21,7 @@
         "newBroken" : false,
         "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 300, 'expected_msg': 'string'}}" ]
+        "parameters" : [ "{'case': {'name': 'testcase_02', 'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 300, 'expected_msg': 'string'}}" ]
       } ],
       "uid" : "fee5a8b2841ecc0102066dd0f228dc1f"
     } ],

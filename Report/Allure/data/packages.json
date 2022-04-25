@@ -5,13 +5,13 @@
     "name" : "TestCase.test_request",
     "children" : [ {
       "name" : "test_string[args0]",
-      "uid" : "52a675a6a68fed57",
+      "uid" : "65a0a04e93339340",
       "parentUid" : "7ad1eef3a1b3c820f1576091c325288b",
       "status" : "passed",
       "time" : {
-        "start" : 1650792695538,
-        "stop" : 1650792697431,
-        "duration" : 1893
+        "start" : 1650860829475,
+        "stop" : 1650860831201,
+        "duration" : 1726
       },
       "flaky" : false,
       "newFailed" : false,
@@ -19,16 +19,16 @@
       "newBroken" : false,
       "retriesCount" : 0,
       "retriesStatusChange" : false,
-      "parameters" : [ "{'data': {'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
+      "parameters" : [ "{'case': {'name': 'testcase_01', 'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 200, 'expected_msg': 'success'}}" ]
     }, {
       "name" : "test_string[args1]",
-      "uid" : "30dd73c0ad7e2e6d",
+      "uid" : "ba4ea995820bf829",
       "parentUid" : "7ad1eef3a1b3c820f1576091c325288b",
       "status" : "failed",
       "time" : {
-        "start" : 1650792697502,
-        "stop" : 1650792698899,
-        "duration" : 1397
+        "start" : 1650860831257,
+        "stop" : 1650860832719,
+        "duration" : 1462
       },
       "flaky" : false,
       "newFailed" : false,
@@ -36,7 +36,7 @@
       "newBroken" : false,
       "retriesCount" : 0,
       "retriesStatusChange" : false,
-      "parameters" : [ "{'data': {'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 300, 'expected_msg': 'string'}}" ]
+      "parameters" : [ "{'case': {'name': 'testcase_02', 'url': 'http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'expected_code': 300, 'expected_msg': 'string'}}" ]
     } ],
     "uid" : "TestCase.test_request"
   } ]
