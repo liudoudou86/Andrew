@@ -17,11 +17,9 @@
   - [x] 读取json文件
   - [x] 扩展在线postman简版
   - [ ] 脚手架
-  - [ ] dockerfile脚本
-  - [ ] jenkins脚本
-  - [ ] demo文件产出
-  - [ ] docs文件产出
   - [ ] schema规约高级断言
+  - [ ] docs文件产出
+
 
 #### 项目结构
 
@@ -51,8 +49,8 @@ Andrew -- 父工程
 | Allure               | 测试报告
 | PyMysql              | 数据库处理工具
 | PyYaml               | yaml文件处理工具
-| Web服务               | Flask、FastAPI
-| 部署方式              | Docker、Jenkins
+| Web服务               | Flask
+| 部署方式              | Jenkins
 
 ### 备注
 

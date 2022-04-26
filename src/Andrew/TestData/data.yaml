@@ -1,0 +1,40 @@
+# 用例1
+-
+  case : 
+    feature : 接口测试
+    story : 列表展示 - 操作人
+    title : 字符串断言
+    url : v1/rebate/adjustment/pageByPostFilter?withDetail=true&pageSize=10&pageNum=1
+    method : post
+    headers : 
+      Accept: application/json, text/plain, */*
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50
+      Access-Token: eyJhbGciOiJIUzI1NiJ9.eyJpbnN0YW5jZUlkIjoxLCJsb2dpbk5hbWUiOiJXQU5HUlgiLCJ0ZW5hbnRJZCI6MSwiaWQiOjQ4MiwibG9naW5Tb3VyY2UiOiIwNjA3MDk3MTE3IiwianRpIjoiMjI4MTAyYWEtMDk4OS00YTgzLWFjNGUtMjNmNjRjMTRiM2Y2IiwibmJmIjoxNjUwNjA3MDk1LCJleHAiOjE2NTU3OTEwOTV9.W-MMO4bgBeXfQYTqVZl9Itenw5bkUWHu6ueX1peZzLE
+    json : 
+        code: null
+        instructions: null
+        remark: null
+        operatePerson: null
+        operateTimeStart: null
+        operateTimeEnd: null
+        status: null
+        type: freeze_adjustment
+    expected_code : 200
+    string : operatePerson
+    number : 0
+    expected_msg : 王瑞香
+
+# 用例2
+-
+  case : 
+    feature : 接口测试
+    story : 调整 - 返回状态
+    title : 字符串断言
+    url : v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899
+    method : get
+    headers : 
+    json : 
+    expected_code : 200
+    string : resultMsg
+    number : 0
+    expected_msg : text

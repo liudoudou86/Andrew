@@ -1,0 +1,99 @@
+{
+  "uid" : "d552f593369be373",
+  "name" : "字符串断言",
+  "fullName" : "TestCase.test_request.TestAdjuestment#test_string",
+  "historyId" : "879147cf9fe9a9a8259ca7bd7e78d037",
+  "time" : {
+    "start" : 1650957449018,
+    "stop" : 1650957449387,
+    "duration" : 369
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "start",
+    "time" : {
+      "start" : 1650957449009,
+      "stop" : 1650957449015,
+      "duration" : 6
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "start::0",
+    "time" : {
+      "start" : 1650957449388,
+      "stop" : 1650957449392,
+      "duration" : 4
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "接口测试"
+  }, {
+    "name" : "story",
+    "value" : "列表展示 - 操作人"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestCase"
+  }, {
+    "name" : "suite",
+    "value" : "test_request"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestAdjuestment"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-2MLCHMP"
+  }, {
+    "name" : "thread",
+    "value" : "2860-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestCase.test_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "args",
+    "value" : "{'case': {'feature': '接口测试', 'story': '列表展示 - 操作人', 'title': '字符串断言', 'url': 'v1/rebate/adjustment/pageByPostFilter?withDetail=true&pageSize=10&pageNum=1', 'method': 'post', 'headers': {'Accept': 'application/json, text/plain, */*', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50', 'Access-Token': 'eyJhbGciOiJIUzI1NiJ9.eyJpbnN0YW5jZUlkIjoxLCJsb2dpbk5hbWUiOiJXQU5HUlgiLCJ0ZW5hbnRJZCI6MSwiaWQiOjQ4MiwibG9naW5Tb3VyY2UiOiIwNjA3MDk3MTE3IiwianRpIjoiMjI4MTAyYWEtMDk4OS00YTgzLWFjNGUtMjNmNjRjMTRiM2Y2IiwibmJmIjoxNjUwNjA3MDk1LCJleHAiOjE2NTU3OTEwOTV9.W-MMO4bgBeXfQYTqVZl9Itenw5bkUWHu6ueX1peZzLE'}, 'json': {'code': None, 'instructions': None, 'remark': None, 'operatePerson': None, 'operateTimeStart': None, 'operateTimeEnd': None, 'status': None, 'type': 'freeze_adjustment'}, 'expected_code': 200, 'string': 'operatePerson', 'number': 0, 'expected_msg': '王瑞香'}}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d552f593369be373.json",
+  "parameterValues" : [ "{'case': {'feature': '接口测试', 'story': '列表展示 - 操作人', 'title': '字符串断言', 'url': 'v1/rebate/adjustment/pageByPostFilter?withDetail=true&pageSize=10&pageNum=1', 'method': 'post', 'headers': {'Accept': 'application/json, text/plain, */*', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50', 'Access-Token': 'eyJhbGciOiJIUzI1NiJ9.eyJpbnN0YW5jZUlkIjoxLCJsb2dpbk5hbWUiOiJXQU5HUlgiLCJ0ZW5hbnRJZCI6MSwiaWQiOjQ4MiwibG9naW5Tb3VyY2UiOiIwNjA3MDk3MTE3IiwianRpIjoiMjI4MTAyYWEtMDk4OS00YTgzLWFjNGUtMjNmNjRjMTRiM2Y2IiwibmJmIjoxNjUwNjA3MDk1LCJleHAiOjE2NTU3OTEwOTV9.W-MMO4bgBeXfQYTqVZl9Itenw5bkUWHu6ueX1peZzLE'}, 'json': {'code': None, 'instructions': None, 'remark': None, 'operatePerson': None, 'operateTimeStart': None, 'operateTimeEnd': None, 'status': None, 'type': 'freeze_adjustment'}, 'expected_code': 200, 'string': 'operatePerson', 'number': 0, 'expected_msg': '王瑞香'}}" ]
+}

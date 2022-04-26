@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Mon Apr 25 17:13:50 CST 2022","Mon Apr 25 17:13:50 CST 2022","217","TestCase","test_request","TestRequest","","","test_string[args0]",""
-"passed","Mon Apr 25 17:13:50 CST 2022","Mon Apr 25 17:13:52 CST 2022","1573","TestCase","test_request","TestRequest","","","test_string[args1]",""
