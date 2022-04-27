@@ -1,0 +1,21 @@
+[ {
+  "uid" : "2dac9bcfe566db09",
+  "name" : "字符串断言",
+  "time" : {
+    "start" : 1651034301915,
+    "stop" : 1651034302303,
+    "duration" : 388
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2ac1a7f5db71f419",
+  "name" : "字符串断言",
+  "time" : {
+    "start" : 1651034302331,
+    "stop" : 1651034303937,
+    "duration" : 1606
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]

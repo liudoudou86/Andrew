@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Tue Apr 26 15:17:29 CST 2022","Tue Apr 26 15:17:31 CST 2022","1596","TestCase","test_request","TestAdjuestment","","","字符串断言",""
-"passed","Tue Apr 26 15:17:29 CST 2022","Tue Apr 26 15:17:29 CST 2022","369","TestCase","test_request","TestAdjuestment","","","字符串断言",""

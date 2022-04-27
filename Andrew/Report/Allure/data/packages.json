@@ -1,0 +1,43 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "TestCase.test_request",
+    "children" : [ {
+      "name" : "字符串断言",
+      "uid" : "2dac9bcfe566db09",
+      "parentUid" : "7ad1eef3a1b3c820f1576091c325288b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651034301915,
+        "stop" : 1651034302303,
+        "duration" : 388
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "{'case': {'feature': '接口测试', 'story': '列表展示 - 操作人', 'title': '字符串断言', 'url': 'v1/rebate/adjustment/pageByPostFilter?withDetail=true&pageSize=10&pageNum=1', 'method': 'post', 'json': {'code': None, 'instructions': None, 'remark': None, 'operatePerson': None, 'operateTimeStart': None, 'operateTimeEnd': None, 'status': None, 'type': 'freeze_adjustment'}, 'expected_code': 200, 'string': 'operatePerson', 'number': 0, 'expected_msg': '王瑞香'}}" ]
+    }, {
+      "name" : "字符串断言",
+      "uid" : "2ac1a7f5db71f419",
+      "parentUid" : "7ad1eef3a1b3c820f1576091c325288b",
+      "status" : "failed",
+      "time" : {
+        "start" : 1651034302331,
+        "stop" : 1651034303937,
+        "duration" : 1606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "{'case': {'feature': '接口测试', 'story': '调整 - 返回状态', 'title': '字符串断言', 'url': 'v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899', 'method': 'get', 'json': None, 'expected_code': 200, 'string': 'resultMsg', 'number': 0, 'expected_msg': 'text'}}" ]
+    } ],
+    "uid" : "TestCase.test_request"
+  } ]
+}
