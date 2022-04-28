@@ -2,7 +2,8 @@
 
 import argparse
 import os
-from Andrew import __description__
+
+from Andrew import __description__, __version__
 
 
 def main():
@@ -12,20 +13,29 @@ def main():
     """
     # 创建解析器
     parser = argparse.ArgumentParser(description=__description__)
-    # 添加子命令
-    subparsers = parser.add_subparsers()
-    # 定义子命令
-    sub_parser = subparsers.add_parser('init', help='Creaete a new project')
-    # 定义子命令参数
-    sub_parser.add_argument('project_name', type=str, help='Your project name')
-    # 打印帮助信息
-    sub_parser.print_help()
+    # 创建命令行指令
+    parser.add_argument('-v', '--version', dest='version', action='store_true', help="Show version")
+    parser.add_argument('-init', help='Create a new project.')
+    parser.add_argument('-run', help='Run test case.')
     # 解析参数
     args = parser.parse_args()
-    # 创建项目
-    ini_project(args.project_name)
+    # 读取版本号
+    if args.version:
+        print("Andrew {}".format(__version__))
+        return 0
+    # 创建脚手架
+    project_name = args.init
+    if project_name:
+        create_scaffold(project_name)
+        return 0
+    # 运行测试用例
+    test_case = args.run
+    if test_case:
+        command = "python3 " + test_case
+        os.system(command)
+        return 0
 
-def ini_project(project_name):
+def create_scaffold(project_name):
     """
     脚手架生成目录结构
     :param project_name: 项目名称
@@ -64,6 +74,3 @@ def ini_project(project_name):
     create_file(os.path.join(project_name, "Config", "Config.ini"), config_file)
     create_folder(os.path.join(project_name, "TestCase"))
     create_folder(os.path.join(project_name, "TestData"))
-
-if __name__ == '__main__':
-    main()

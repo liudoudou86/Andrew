@@ -53,6 +53,6 @@ class MysqlOperate():
 mysql = MysqlOperate()
 
 if __name__ == '__main__':
-    sql = "SELECT ID,SUMMARY_SERIAL_NUMBER,REBATE_MODULE_NAME,SECOND_LEVEL_ENTERPRISE_NAME,SECOND_LEVEL_ENTERPRISE_CRM_CODE,AMOUNT_PAID AS 已支付金额,REMAINING_AMOUNT AS 剩余金额,OCCUPIED_AMOUNT AS 已占用金额,REBATE_IMPORT_DATE FROM rebate AS r WHERE FIRST_LEVEL_ENTERPRISE_NAME = '天津广丰大药房有限公司';"
+    sql = "select * from ch_channel"
     log.debug(f" \n {mysql.execute_sql(sql)}")
     mysql.close()
