@@ -18,6 +18,6 @@ def main():
     else:
         log.error("生成报告失败")
 
-# 自动化测试启动器
+# 工程入口
 if __name__ == '__main__':
     main()

@@ -3,24 +3,6 @@
 #### 项目介绍
 
 接口测试自动化框架，使用POM设计模式基于schema规约接口自动化框架
-* 框架开发进度管理：
-  - [x] 日志工具类封装
-  - [x] 读取配置文件
-  - [x] 请求工具类封装
-  - [x] 断言工具类封装
-  - [x] json解析工具类封装
-  - [x] 第一次联调完成
-  - [x] 读取数据库
-  - [x] 读取ymal文件
-  - [x] pytset结合yaml做数据驱动
-  - [x] 第二次联调完成
-  - [x] 读取json文件
-  - [x] 扩展在线postman简版
-  - [x] 脚手架
-  - [x] 工程打包
-  - [ ] schema规约高级断言
-  - [ ] docs文件产出
-
 
 #### 项目结构
 
@@ -54,8 +36,27 @@ Andrew -- 父工程
 | Web服务              | Flask
 | 部署方式              | Jenkins
 
-### 备注
+### 备忘录
 
-* 接口自动化测试框架
 * pip install -r requirements.txt
 * python setup.py bdist_wheel
+* 打包当前只能使用：python setup.py install安装，.whl文件暂时不能使用，需要研究
+
+### 项目开发进度管理
+
+  - [x] 日志工具类封装
+  - [x] 读取配置文件
+  - [x] 请求工具类封装
+  - [x] 断言工具类封装
+  - [x] json解析工具类封装
+  - [x] 第一次联调完成
+  - [x] 读取数据库
+  - [x] 读取ymal文件
+  - [x] pytset结合yaml做数据驱动
+  - [x] 第二次联调完成
+  - [x] 读取json文件
+  - [x] 扩展在线postman简版
+  - [x] 脚手架
+  - [x] 工程打包
+  - [ ] schema规约高级断言
+  - [ ] docs文件产出
