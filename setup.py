@@ -19,6 +19,7 @@ setup(
     install_requires=[
         "loguru>=0.5.3",
         "configparser>=5.2.0",
+        "requests>=2.27.1",
         "PyHamcrest>=2.0.3",
         "jsonpath>=0.82",
         "pytest>=6.2.5",
@@ -34,13 +35,13 @@ setup(
     ],
     entry_points='''
     [console_scripts]
-    andrew=Andrew.Cli:main
+    api=Andrew.Cli:main
     ''',
     classifiers=[
         'Intended Audience :: Developers',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: Microsoft :: Windows',
-        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',

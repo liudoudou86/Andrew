@@ -28,7 +28,8 @@
 Andrew -- 父工程
 ├── common -- 公共工具类
 ├── config -- 配置文件
-├── logs -- 日志输出
+├── database -- 读取数据库
+├── log -- 日志输出
 ├── report -- 报告输出
 ├── testcase -- 测试用例
 ├── testdata -- 测试数据
@@ -50,10 +51,11 @@ Andrew -- 父工程
 | Allure               | 测试报告
 | PyMysql              | 数据库处理工具
 | PyYaml               | yaml文件处理工具
-| Web服务               | Flask
+| Web服务              | Flask
 | 部署方式              | Jenkins
 
 ### 备注
 
 * 接口自动化测试框架
 * pip install -r requirements.txt
+* python setup.py bdist_wheel
