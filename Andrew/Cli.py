@@ -3,6 +3,7 @@
 import argparse
 import os
 import sys
+from Andrew.Run import main
 
 from Andrew import __description__, __version__
 
@@ -37,10 +38,8 @@ def main():
     if sys.argv[1] == "-init":
         create_scaffold(project_name)
     # 运行测试用例
-    test_file = args.run
-    if test_file:
-        command = "python -m pytest " + test_file
-        os.system(command)
+    if sys.argv[1] == "-run":
+        main()
 
 def create_scaffold(project_name):
     """
@@ -56,14 +55,12 @@ def create_scaffold(project_name):
             f.write(file_content)
 
     config_file = """
-[Tester]
-name = douer
-
 [Host]
 host = http://10.6.3.13:28083/api/rebate/
 token = eyJhbGciOiJIUzI1NiJ9.eyJpbnN0YW5jZUlkIjoxLCJsb2dpbk5hbWUiOiJXQU5HUlgiLCJ0ZW5hbnRJZCI6MSwiaWQiOjQ4MiwibG9naW5Tb3VyY2UiOiIxMDIwNTE3MTU5IiwianRpIjoiYzRmMTUzNmQtNzlhZC00NWUxLWFhOGYtNzAzODNiMDYxM2E0IiwibmJmIjoxNjUxMDIwNTA3LCJleHAiOjE2NTYyMDQ1MDd9.e29c4NuEAca4qY6GMcBeX1ei-tv8O8vbqntWj-iyifk
 
 [Log]
+log_path = ./Log
 level = DEBUG
 rotation = 100MB
 format = {time:YYYY-MM-DD HH:mm:ss} | {level:<8} [ {file}:{line} ] - {message}
@@ -71,9 +68,17 @@ format = {time:YYYY-MM-DD HH:mm:ss} | {level:<8} [ {file}:{line} ] - {message}
 [Mysql]
 host = 10.6.3.13
 user = root
-port = 12000
+port = 23306
 password = root
-db_name = dev
+db_name = tasly-center-channel
+
+[Report]
+report_path = ./Report
+result_path = ./Report/Result
+allure_path = ./Report/Allure
+
+[TestData]
+testdata_path = ./TestData
 """
 
     conftest_file = """
@@ -176,6 +181,23 @@ class TestAdjuestment:
     number : 0
     expected_msg : text
 """
+    pytest_file = """
+[pytest]
+addopts = -vs --alluredir=./Report/Result --clean-alluredir --disable-warnings
+testpaths = ./TestCase
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
+
+log_level = INFO
+log_format = %(asctime)s [%(levelname)s] ~ %(message)s
+log_date_format = %Y-%m-%d %H:%M:%S
+
+log_cli = 0
+log_cli_level = DEBUG
+log_cli_format = %(asctime)s [%(levelname)s] (%(filename)s:%(lineno)s) ~ %(message)s
+log_cli_date_format = %Y-%m-%d %H:%M:%S
+"""
 
     # 创建项目骨架
     create_folder(project_name)
@@ -190,6 +212,4 @@ class TestAdjuestment:
     create_file(os.path.join(project_name, "TestCase", "test_request.py"), testcase_file)
     create_folder(os.path.join(project_name, "TestData"))
     create_file(os.path.join(project_name, "TestData", "data.yaml"), testdata_file)
-
-if __name__ == '__main__':
-    main()
+    create_file(project_name, "data.yaml"), pytest_file
