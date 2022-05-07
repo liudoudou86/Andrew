@@ -1,0 +1,20 @@
+[
+  {
+    "case" : {
+      "name" : "testcase_01",
+      "url" : "v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899",
+      "method" : "get",
+      "expected_code" : 200,
+      "expected_msg" : "success"
+    }
+  },
+  {
+    "case" : {
+      "name" : "testcase_02",
+      "url" : "http://10.6.3.13:28083/api/rebate/v1/rebate/query/availableRebateSummary?regionCode=340000&saleOrgCode=1017&firstLevelReceivingEnterpriseCode=1000009899",
+      "method" : "get",
+      "expected_code" : 300,
+      "expected_msg" : "string"
+    }
+  }
+]

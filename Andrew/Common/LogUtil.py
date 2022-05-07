@@ -2,6 +2,7 @@
 
 from Andrew.Common.ReadConfig import ini
 from Andrew.Common.TimeUtil import dt_strftime
+from Andrew.Config.Conf import cm
 from loguru import logger
 
 
@@ -18,8 +19,11 @@ class Log():
         if not cls.__instance:
             cls.__instance = super(Log, cls).__new__(cls, *args, **kwargs)
         return cls.__instance
-
-    log_path = ini._get('Log', 'log_path')
+    
+    if (ini._get('Log', 'log_path') == ""):
+        log_path = cm.LOG_DIR
+    else:
+        log_path = ini._get('Log', 'log_path')
     time = dt_strftime()
     logger.add(sink = log_path + f"/Log_{time}.log", # 日志路径
                 level = ini._get('Log', 'level'), # 输出级别

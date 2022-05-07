@@ -1,10 +1,12 @@
 # -*- coding:utf-8 -*-
 
 import json
+import os
 
 import yaml
 from Andrew.Common.LogUtil import log
 from Andrew.Common.ReadConfig import ini
+from Andrew.Config.Conf import cm
 
 
 class ReadFile(object):
@@ -13,7 +15,10 @@ class ReadFile(object):
         """
         初始化测试数据路径
         """
-        self.file_path = ini._get('TestData','testdata_path')
+        if (ini._get('TestData', 'testdata_path') == ""):
+            self.file_path = cm.TESTDATA_DIR
+        else:
+            self.file_path = ini._get('TestData', 'testdata_path')
 
     def read_yaml(self, file_name):
         """
@@ -21,7 +26,7 @@ class ReadFile(object):
         :return:
         """
         try:
-            with open(self.file_path + '/' + file_name, 'r', encoding='utf-8') as f:
+            with open(self.file_path + os.sep + file_name, 'r', encoding='utf-8') as f:
                 data = yaml.safe_load(stream=f)
             return data
         except FileExistsError as e:
@@ -33,7 +38,7 @@ class ReadFile(object):
         :return:
         """
         try:
-            with open(self.file_path + '/' + file_name, 'r', encoding='utf-8-sig') as f:
+            with open(self.file_path + os.sep + file_name, 'r', encoding='utf-8-sig') as f:
                 data = json.load(f)
             return data
         except FileExistsError as e:

@@ -3,9 +3,9 @@
 import argparse
 import os
 import sys
-from Andrew.Run import main
 
 from Andrew import __description__, __version__
+from Andrew.Common.ReadConfig import ini
 
 
 def main():
@@ -37,9 +37,13 @@ def main():
     project_name = args.init
     if sys.argv[1] == "-init":
         create_scaffold(project_name)
+        return 0
     # 运行测试用例
+    test_file = args.run
     if sys.argv[1] == "-run":
-        main()
+        command = 'python -m pytest -vs' + test_file
+        os.system(command)
+        return 0
 
 def create_scaffold(project_name):
     """
@@ -53,33 +57,6 @@ def create_scaffold(project_name):
     def create_file(path, file_content=""):
         with open(path, "w", encoding="utf-8") as f:
             f.write(file_content)
-
-    config_file = """
-[Host]
-host = http://10.6.3.13:28083/api/rebate/
-token = eyJhbGciOiJIUzI1NiJ9.eyJpbnN0YW5jZUlkIjoxLCJsb2dpbk5hbWUiOiJXQU5HUlgiLCJ0ZW5hbnRJZCI6MSwiaWQiOjQ4MiwibG9naW5Tb3VyY2UiOiIxMDIwNTE3MTU5IiwianRpIjoiYzRmMTUzNmQtNzlhZC00NWUxLWFhOGYtNzAzODNiMDYxM2E0IiwibmJmIjoxNjUxMDIwNTA3LCJleHAiOjE2NTYyMDQ1MDd9.e29c4NuEAca4qY6GMcBeX1ei-tv8O8vbqntWj-iyifk
-
-[Log]
-log_path = ./Log
-level = DEBUG
-rotation = 100MB
-format = {time:YYYY-MM-DD HH:mm:ss} | {level:<8} [ {file}:{line} ] - {message}
-
-[Mysql]
-host = 10.6.3.13
-user = root
-port = 23306
-password = root
-db_name = tasly-center-channel
-
-[Report]
-report_path = ./Report
-result_path = ./Report/Result
-allure_path = ./Report/Allure
-
-[TestData]
-testdata_path = ./TestData
-"""
 
     conftest_file = """
 # -*- coding:utf-8 -*-
@@ -181,35 +158,30 @@ class TestAdjuestment:
     number : 0
     expected_msg : text
 """
-    pytest_file = """
-[pytest]
-addopts = -vs --alluredir=./Report/Result --clean-alluredir --disable-warnings
-testpaths = ./TestCase
-python_files = test_*.py
-python_classes = Test*
-python_functions = test_*
-
-log_level = INFO
-log_format = %(asctime)s [%(levelname)s] ~ %(message)s
-log_date_format = %Y-%m-%d %H:%M:%S
-
-log_cli = 0
-log_cli_level = DEBUG
-log_cli_format = %(asctime)s [%(levelname)s] (%(filename)s:%(lineno)s) ~ %(message)s
-log_cli_date_format = %Y-%m-%d %H:%M:%S
-"""
 
     # 创建项目骨架
     create_folder(project_name)
     create_folder(os.path.join(project_name, "Config"))
-    create_file(os.path.join(project_name, "Config", "Config.ini"), config_file)
     create_folder(os.path.join(project_name, "Log"))
+    log_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + project_name + os.sep + "Log"
     create_folder(os.path.join(project_name, "Report"))
+    report_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + project_name + os.sep + "Report"
     create_folder(os.path.join(project_name, "Report", "Allure"))
+    allure_dir = report_dir + os.sep + "Allure"
     create_folder(os.path.join(project_name, "Report", "Result"))
+    result_dir = report_dir + os.sep + "Result"
     create_folder(os.path.join(project_name, "TestCase"))
-    create_file(os.path.join(project_name, "TestCase", "conftest.py"), conftest_file)
+    create_file(os.path.join(project_name, "TestCase", "__init__.py"))
     create_file(os.path.join(project_name, "TestCase", "test_request.py"), testcase_file)
     create_folder(os.path.join(project_name, "TestData"))
+    testdata_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + project_name + os.sep + "TestData"
     create_file(os.path.join(project_name, "TestData", "data.yaml"), testdata_file)
-    create_file(project_name, "data.yaml"), pytest_file
+    create_file(os.path.join(project_name, "conftest.py"), conftest_file)
+    ini._set("Log", "log_path", log_dir)
+    ini._set("Report", "report_path", report_dir)
+    ini._set("Report", "allure_path", allure_dir)
+    ini._set("Report", "result_path", result_dir)
+    ini._set("TestData", "testdata_path", testdata_dir)
+
+if __name__ == "__main__":
+    main()
