@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postboy</title>
+</head>
+<body>
+    <!-- 看板娘 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+    <form action = "http://192.168.1.111:5000/request" method = "GET">
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        Method
+                    </th>
+                    <th>
+                        <input id="method" type = "text" name = "METHOD"/>
+                    </th>
+                    <th>
+                        URL
+                    </th>
+                    <th>
+                        <input id="url" type = "text" name = "URL"/>
+                    </th>
+                    <th>
+                        <input type="submit" value="请求" style="width: 60px" onclick="inOut(0);">
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

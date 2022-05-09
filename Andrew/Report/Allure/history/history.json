@@ -1,0 +1,41 @@
+{
+  "79d4504d6ae7e70ccbebe50256299174" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d593668cae45608f",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: ❌ 字符串与预期结果不同, 预期为 text, 实际为 success",
+      "time" : {
+        "start" : 1652064416726,
+        "stop" : 1652064418445,
+        "duration" : 1719
+      }
+    } ]
+  },
+  "879147cf9fe9a9a8259ca7bd7e78d037" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "20515c01160af5f3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1652064416289,
+        "stop" : 1652064416651,
+        "duration" : 362
+      }
+    } ]
+  }
+}

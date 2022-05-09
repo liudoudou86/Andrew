@@ -1,1 +1,2 @@
-recursive-include Andrew/Config/Config *.ini
+recursive-include Andrew/Config *.ini
+recursive-include Andrew/Expansion/templates *.html
