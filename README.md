@@ -40,9 +40,8 @@ Andrew -- 父工程
 
 * pip install -r requirements.txt
 * python setup.py bdist_wheel
-* 打包当前只能使用：python setup.py install安装，.whl文件暂时不能使用，需要研究
 
-### 项目开发进度管理
+### 项目进度
 
   - [x] 日志工具类封装
   - [x] 读取配置文件
