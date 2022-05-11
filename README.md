@@ -57,6 +57,7 @@ Andrew -- 父工程
   - [x] 扩展在线postman简版
   - [x] 脚手架
   - [x] 工程打包
+  - [ ] conftest钩子函数
   - [ ] 读取sql脚本
   - [ ] schema规约高级断言
   - [ ] docs文件产出
