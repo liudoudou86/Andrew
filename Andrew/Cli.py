@@ -71,11 +71,24 @@ import pytest
 from Andrew.Common.LogUtil import log
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(autouse=True)
 def start():
-    log.info('------------------------ Test Start ------------------------')
+    log.info('🎈--------- Test Start ---------')
     yield
-    log.info('------------------------ Test End ------------------------')
+    log.info('🎈--------- Test End ---------')
+
+@pytest.hookimpl(hookwrapper=True, tryfirst=True)
+def pytest_runtest_makereport():
+    '''
+    获取每个用例状态的钩子函数
+    :return:
+    '''
+    # 获取钩子方法的调用结果
+    out = yield
+    # 从钩子方法的调用结果中获取测试报告
+    result = out.get_result()
+    log.info(('测试步骤: %s' % result.when))
+    log.info(('测试结果: %s' % result.outcome))
 """
 
     testcase_file = """
