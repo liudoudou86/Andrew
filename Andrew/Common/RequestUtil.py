@@ -11,7 +11,11 @@ class ResponseResult:
     response = None
 
 def request_log(func):
+    """
+    装饰器: 作用为接口请求时日志处理
+    """
     def wrapper(*args, **kwargs):
+
         func_name = func.__name__
         print("\n")
         log.info('------------------------ Request ------------------------[🚀]')
