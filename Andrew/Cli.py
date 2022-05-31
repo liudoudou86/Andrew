@@ -37,7 +37,8 @@ def main():
             parser.print_help()
         # 启动web服务
         elif sys.argv[1] == "-server":
-            app.run(host='0.0.0.0', debug=True, port=5000, threaded=True)
+            command = 'uvicorn main:app --reload'
+            os.system(command)
         sys.exit(0)
     # 创建脚手架
     project_name = args.init

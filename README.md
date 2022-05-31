@@ -36,7 +36,7 @@ Andrew -- 父工程
 | Web服务              | Flask
 | 部署方式              | Jenkins
 
-### 备忘录
+### 项目安装&打包
 
 * pip install -r requirements.txt
 * python setup.py bdist_wheel

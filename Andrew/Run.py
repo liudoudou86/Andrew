@@ -10,6 +10,7 @@ from Andrew.Config.Conf import cm
 
 def main():
 
+    # 初始化配置文件
     pytest.main()
     report = os.system("allure generate --clean %s -o %s" % (cm.RESULT_DIR, cm.ALLURE_DIR))
     if report == 0:
