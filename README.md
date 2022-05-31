@@ -40,6 +40,7 @@ Andrew -- 父工程
 
 * pip install -r requirements.txt
 * python setup.py bdist_wheel
+* uvicorn main:app --reload
 
 ### 项目进度
 

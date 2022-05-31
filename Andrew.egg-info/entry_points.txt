@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    api=Andrew.Cli:main
+    
