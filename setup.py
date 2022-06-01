@@ -33,7 +33,8 @@ setup(
         "PyYAML>=6.0",
         "Flask>=2.0.2",
         "fastapi>=0.78.0",
-        "uvicorn>=0.17.6"
+        "uvicorn>=0.17.6",
+        "jsonschema>=4.5.1"
     ],
     entry_points='''
     [console_scripts]

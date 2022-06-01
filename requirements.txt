@@ -16,3 +16,4 @@ Flask==2.0.2
 wheel==0.37.1
 fastapi==0.78.0
 uvicorn==0.17.6
+jsonschema==4.5.1

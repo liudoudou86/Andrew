@@ -28,7 +28,7 @@ Andrew -- 父工程
 | Requests             | 接口请求工具
 | JsonPath             | json解析工具
 | PyHamcrest           | 基于java语言断言工具
-| Jsonschema           | 预计schema规约断言工具
+| Jsonschema           | 基于schema规约断言工具
 | Pytest               | 测试框架
 | Allure               | 测试报告
 | PyMysql              | 数据库处理工具
@@ -59,6 +59,6 @@ Andrew -- 父工程
   - [x] 脚手架
   - [x] 工程打包
   - [x] conftest钩子函数
+  - [x] schema规约高级断言
   - [ ] 读取sql脚本
-  - [ ] schema规约高级断言
   - [ ] docs文件产出

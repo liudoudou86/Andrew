@@ -3,6 +3,7 @@
 from Andrew.Common.LogUtil import log
 from Andrew.Common.TimeUtil import sleep
 from hamcrest import *
+from jsonschema import validate
 
 
 class Assertions():
@@ -59,6 +60,21 @@ class Assertions():
             self.log.error("❌ 字符串与预期结果相同, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
             raise AssertionError("❌ 字符串与预期结果相同, 预期为 %s, 实际为 %s " % (expected_msg, body_msg))
     
+    def assert_schema(self, body, expected_schema):
+        """
+        验证response 是否符合schema规约
+        :param body:
+        :param expected_msg:
+        :return:
+        """
+        try:
+            validate(body, expected_schema)
+            return True
+
+        except:
+            self.log.error("不符合预期schema规约, 预期规约为 %s" % expected_schema)
+            raise AssertionError("不符合预期schema规约, 预期规约为 %s" % expected_schema)
+
     def assert_value(self, body, expected_msg):
         """
         验证response 对象是否包含预期值
