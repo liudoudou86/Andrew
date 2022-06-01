@@ -74,9 +74,9 @@ from Andrew.Common.LogUtil import log
 
 @pytest.fixture(autouse=True)
 def start():
-    log.info('🎈--------- Test Start ---------')
+    log.info('[🎈] ------------------------ Test Start ------------------------')
     yield
-    log.info('🎈--------- Test End ---------')
+    log.info('[🎈] ------------------------ Test End ------------------------')
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
 def pytest_runtest_makereport():
