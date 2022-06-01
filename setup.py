@@ -31,7 +31,9 @@ setup(
         "PyMySQL>=1.0.2",
         "prettytable>=3.2.0",
         "PyYAML>=6.0",
-        "Flask>=2.0.2"
+        "Flask>=2.0.2",
+        "fastapi>=0.78.0",
+        "uvicorn>=0.17.6"
     ],
     entry_points='''
     [console_scripts]
