@@ -44,16 +44,14 @@
   ```
   - yaml：可针对yaml断言状态码、响应中某个值
   ```
-  # 用例1
-  -
-    case : 
-      feature : 接口测试
-      story : 页面展示
-      title : 字符串断言
-      url : www.baidu.com
-      method : get
-      expected_code : 200
-      expected_msg : success
+  case : 
+    feature : 接口测试
+    story : 页面展示
+    title : 字符串断言
+    url : www.baidu.com
+    method : get
+    expected_code : 200
+    expected_msg : success
   ```
 - 高级断言
   - schema：可针对响应中值的类型进行断言
