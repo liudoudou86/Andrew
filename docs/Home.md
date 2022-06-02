@@ -19,5 +19,5 @@
 ### 结构
 
   * [框架结构](https://www.processon.com/view/link/624e3c3e1e085332f32e7c17)  
-  * 架构图
-  ![架构图](./%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
+  * 架构图  
+  <img src="./架构图.png" width="70" height="70" align="middle" />
