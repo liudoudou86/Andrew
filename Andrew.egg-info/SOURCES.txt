@@ -25,4 +25,6 @@ Andrew/Config/Config.ini
 Andrew/Config/__init__.py
 Andrew/DataBase/MysqlUtil.py
 Andrew/DataBase/__init__.py
+Andrew/Expansion/__init__.py
+Andrew/Expansion/main.py
 Andrew/TestCase/__init__.py
