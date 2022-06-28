@@ -6,7 +6,7 @@ import sys
 
 from Andrew import __description__, __version__
 from Andrew.Common.ReadConfig import ini
-from Andrew.Expansion.app import app
+from Andrew.Expansion.main import app
 
 
 def main():
