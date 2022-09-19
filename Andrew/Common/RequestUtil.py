@@ -13,6 +13,8 @@ class ResponseResult:
 def request_log(func):
     """
     装饰器: 作用为接口请求时日志处理
+    :param: 接口请求参数
+    :return: 输出日志
     """
     def wrapper(*args, **kwargs):
 

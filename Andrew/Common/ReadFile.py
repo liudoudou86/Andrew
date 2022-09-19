@@ -23,6 +23,7 @@ class ReadFile(object):
     def read_yaml(self, file_name):
         """
         读取yaml文件
+        :pararm: 文件路径
         :return:
         """
         try:
@@ -35,6 +36,7 @@ class ReadFile(object):
     def read_json(self, file_name):
         """
         读取json文件
+        :pararm: 文件路径
         :return:
         """
         try:
