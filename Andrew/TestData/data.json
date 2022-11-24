@@ -1,0 +1,20 @@
+[
+  {
+    "case" : {
+      "name" : "testcase_01",
+      "url" : "/api/randomdate",
+      "method" : "get",
+      "expected_code" : 200,
+      "expected_msg" : "success"
+    }
+  },
+  {
+    "case" : {
+      "name" : "testcase_02",
+      "url" : "/api/randomdate",
+      "method" : "get",
+      "expected_code" : 300,
+      "expected_msg" : "string"
+    }
+  }
+]

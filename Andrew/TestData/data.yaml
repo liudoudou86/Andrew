@@ -1,0 +1,35 @@
+# 用例1
+-
+  case : 
+    feature : 接口测试
+    story : 列表展示 - 操作人
+    title : 字符串断言
+    url : /api/randomdate
+    method : post
+    json : 
+        code: null
+        instructions: null
+        remark: null
+        operatePerson: null
+        operateTimeStart: null
+        operateTimeEnd: null
+        status: null
+        type: freeze_adjustment
+    expected_code : 200
+    string : operatePerson
+    number : 0
+    expected_msg : 成功
+
+# 用例2
+-
+  case : 
+    feature : 接口测试
+    story : 调整 - 返回状态
+    title : 字符串断言
+    url : /api/randomdate
+    method : get
+    json : 
+    expected_code : 200
+    string : resultMsg
+    number : 0
+    expected_msg : text
