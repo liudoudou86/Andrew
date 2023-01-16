@@ -57,24 +57,3 @@ Andrew -- 父工程
 * pip install -r requirements.txt
 * python setup.py bdist_wheel
 * uvicorn main:app --reload
-
-### 项目进度
-
-  - [x] 日志工具类封装
-  - [x] 读取配置文件
-  - [x] 请求工具类封装
-  - [x] 断言工具类封装
-  - [x] json解析工具类封装
-  - [x] 第一次联调完成
-  - [x] 读取数据库
-  - [x] 读取ymal文件
-  - [x] pytset结合yaml做数据驱动
-  - [x] 第二次联调完成
-  - [x] 读取json文件
-  - [x] 扩展在线postman简版
-  - [x] 脚手架
-  - [x] 工程打包
-  - [x] conftest钩子函数
-  - [x] schema规约高级断言
-  - [ ] 读取sql脚本
-  - [ ] docs文件产出
