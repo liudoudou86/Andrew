@@ -17,8 +17,8 @@ class TestAdjuestment:
         捕获token
         :return:
         """
-        url = 'http://10.6.3.13:28083/api/identity/v2/user/token'
-        params = {"userName":"wangrx","password":"VEBzbHk3ODkj","code":"","loginType":0,"uniqueid":"image389c9902-5013-4b7a-b95a-417b39560f70","loginSource":"1020517159","checkCodeUniqueId":"image389c9902-5013-4b7a-b95a-417b39560f70","instanceId":1,"tenantId":1}
+        url = 'http://127.0.0.1:8080/api/identity/v2/user/token'
+        params = {"userName":"admin","password":"VEBzbHk3ODkj","code":"","loginType":0,"uniqueid":"image389c9902-5013-4b7a-b95a-417b39560f70","loginSource":"1020517159","checkCodeUniqueId":"image389c9902-5013-4b7a-b95a-417b39560f70","instanceId":1,"tenantId":1}
         Requestor.request('post', url, params)
         # Assert.assert_code(Requestor.status_code, 200)
         tokencode = Parsing.get_value(Requestor.response, "token", 0)
